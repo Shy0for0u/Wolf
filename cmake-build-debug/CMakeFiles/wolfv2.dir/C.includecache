@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/dgorold-/wolfv2/includes/wolf.h
+../libft/includes/libft.h
+/Users/dgorold-/wolfv2/libft/includes/libft.h
+stdlib.h
+-
+
+/Users/dgorold-/wolfv2/libft/includes/get_next_line.h
+libft.h
+/Users/dgorold-/wolfv2/libft/includes/libft.h
+stdio.h
+-
+fcntl.h
+-
+
+/Users/dgorold-/wolfv2/libft/includes/libft.h
+unistd.h
+-
+stdlib.h
+-
+string.h
+-
+get_next_line.h
+/Users/dgorold-/wolfv2/libft/includes/get_next_line.h
+
+/Users/dgorold-/wolfv2/src/main.c
+stdio.h
+-
+../includes/wolf.h
+/Users/dgorold-/wolfv2/includes/wolf.h
+
