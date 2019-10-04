@@ -30,4 +30,10 @@ typedef struct		s_w
 	t_m				m;
 }					t_w;
 
+void		    	alert_error(int key);
+int 			    read_map(t_w *w, char *file);
+int 		    	c_of_words(const char *str);
+int                 create_standard(t_w *w, char *line);
+void 			    count_of_string(t_w *w, char *file);
+
 #endif //WOLFV1_WOLF_H
