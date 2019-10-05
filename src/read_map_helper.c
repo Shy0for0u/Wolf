@@ -22,7 +22,7 @@ int 			c_of_words(const char *str)
 
 void             save_map(t_w *w, char *line, int y)
 {
-    if ((w->m.map[y] = (char *)malloc(sizeof(char) * w->m.elem + 1)) == NULL)
+    if ((w->m.map[y] = (char *)malloc(sizeof(char) * ft_strlen(line))) == NULL)
     {
         while (y--)
             ft_strdel(&w->m.map[y]);
