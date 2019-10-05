@@ -228,15 +228,21 @@ CMakeFiles/wolfv2.dir/libft/get_next_line.c.obj: ../libft/includes/libft.h
 CMakeFiles/wolfv2.dir/src/main.c.obj: ../includes/wolf.h
 CMakeFiles/wolfv2.dir/src/main.c.obj: ../libft/includes/get_next_line.h
 CMakeFiles/wolfv2.dir/src/main.c.obj: ../libft/includes/libft.h
+CMakeFiles/wolfv2.dir/src/main.c.obj: ../sdl2/win32/include/SDL2/begin_code.h
+CMakeFiles/wolfv2.dir/src/main.c.obj: ../sdl2/win32/include/SDL2/close_code.h
 CMakeFiles/wolfv2.dir/src/main.c.obj: ../src/main.c
 
 CMakeFiles/wolfv2.dir/src/read_map.c.obj: ../includes/wolf.h
 CMakeFiles/wolfv2.dir/src/read_map.c.obj: ../libft/includes/get_next_line.h
 CMakeFiles/wolfv2.dir/src/read_map.c.obj: ../libft/includes/libft.h
+CMakeFiles/wolfv2.dir/src/read_map.c.obj: ../sdl2/win32/include/SDL2/begin_code.h
+CMakeFiles/wolfv2.dir/src/read_map.c.obj: ../sdl2/win32/include/SDL2/close_code.h
 CMakeFiles/wolfv2.dir/src/read_map.c.obj: ../src/read_map.c
 
 CMakeFiles/wolfv2.dir/src/read_map_helper.c.obj: ../includes/wolf.h
 CMakeFiles/wolfv2.dir/src/read_map_helper.c.obj: ../libft/includes/get_next_line.h
 CMakeFiles/wolfv2.dir/src/read_map_helper.c.obj: ../libft/includes/libft.h
+CMakeFiles/wolfv2.dir/src/read_map_helper.c.obj: ../sdl2/win32/include/SDL2/begin_code.h
+CMakeFiles/wolfv2.dir/src/read_map_helper.c.obj: ../sdl2/win32/include/SDL2/close_code.h
 CMakeFiles/wolfv2.dir/src/read_map_helper.c.obj: ../src/read_map_helper.c
 

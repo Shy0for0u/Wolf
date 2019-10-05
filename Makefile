@@ -15,7 +15,7 @@ CC=cc
 FLAGS=-Wall -Wextra -Werror
 MLX_FINGS=-I /usr/local/include -L /usr/local/lib/ -lmlx -framework OpenGL -framework AppKit
 
-NAME=wolf
+NAME=wolfv2
 
 ANOTH_L=./libft/
 NAME_L=libft.a

@@ -15,18 +15,26 @@
 
 #include "../libft/includes/libft.h"
 #include <stdlib.h>
+#include "pthread.h"
+#include "../sdl2/win32/include/SDL2/begin_code.h"
+#include "../sdl2/win32/include/SDL2/close_code.h"
 
 typedef struct		s_m
 {
-	int 			characters;
-	int 			c_of_words;
+	int 			elem;
 	int 			c_of_str;
 	char			**map;
 
 }					t_m;
 
+typedef struct      s_p
+{
+    int             val;
+}                   t_p;
+
 typedef struct		s_w
 {
+    t_p             **p;
 	t_m				m;
 }					t_w;
 

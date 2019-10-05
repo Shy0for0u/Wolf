@@ -229,14 +229,20 @@ CMakeFiles/wolfv2.dir/src/main.c.obj
  C:/Users/pavtr/.CLion2019.2/Wolf/includes/wolf.h
  C:/Users/pavtr/.CLion2019.2/Wolf/libft/includes/get_next_line.h
  C:/Users/pavtr/.CLion2019.2/Wolf/libft/includes/libft.h
+ C:/Users/pavtr/.CLion2019.2/Wolf/sdl2/win32/include/SDL2/begin_code.h
+ C:/Users/pavtr/.CLion2019.2/Wolf/sdl2/win32/include/SDL2/close_code.h
  C:/Users/pavtr/.CLion2019.2/Wolf/src/main.c
 CMakeFiles/wolfv2.dir/src/read_map.c.obj
  C:/Users/pavtr/.CLion2019.2/Wolf/includes/wolf.h
  C:/Users/pavtr/.CLion2019.2/Wolf/libft/includes/get_next_line.h
  C:/Users/pavtr/.CLion2019.2/Wolf/libft/includes/libft.h
+ C:/Users/pavtr/.CLion2019.2/Wolf/sdl2/win32/include/SDL2/begin_code.h
+ C:/Users/pavtr/.CLion2019.2/Wolf/sdl2/win32/include/SDL2/close_code.h
  C:/Users/pavtr/.CLion2019.2/Wolf/src/read_map.c
 CMakeFiles/wolfv2.dir/src/read_map_helper.c.obj
  C:/Users/pavtr/.CLion2019.2/Wolf/includes/wolf.h
  C:/Users/pavtr/.CLion2019.2/Wolf/libft/includes/get_next_line.h
  C:/Users/pavtr/.CLion2019.2/Wolf/libft/includes/libft.h
+ C:/Users/pavtr/.CLion2019.2/Wolf/sdl2/win32/include/SDL2/begin_code.h
+ C:/Users/pavtr/.CLion2019.2/Wolf/sdl2/win32/include/SDL2/close_code.h
  C:/Users/pavtr/.CLion2019.2/Wolf/src/read_map_helper.c
