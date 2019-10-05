@@ -21,6 +21,7 @@
 
 typedef struct		s_m
 {
+    int             size_str;
 	int 			elem;
 	int 			c_of_str;
 	char			**map;
@@ -34,6 +35,7 @@ typedef struct      s_p
 
 typedef struct		s_w
 {
+    int             index;
     t_p             **p;
 	t_m				m;
 }					t_w;

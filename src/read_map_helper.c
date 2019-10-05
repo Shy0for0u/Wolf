@@ -22,7 +22,7 @@ int 			c_of_words(const char *str)
 
 void             save_map(t_w *w, char *line, int y)
 {
-    if ((w->m.map[w->m.c_of_str] = (char *)malloc(sizeof(char) * w->m.elem + 1)) == NULL)
+    if ((w->m.map[y] = (char *)malloc(sizeof(char) * w->m.elem + 1)) == NULL)
     {
         while (y--)
             ft_strdel(&w->m.map[y]);
@@ -33,15 +33,16 @@ void             save_map(t_w *w, char *line, int y)
 
 int             create_standard(t_w *w, char *line)
 {
-    if (w->m.c_of_str == 0)
+    if (w->index == 0)
     {
         if ((w->m.elem = c_of_words(line)) == 0)
         {
             ft_strdel(&line);
             alert_error (1);
         }
-        save_map(w, line, w->m.c_of_str);
-        w->m.c_of_str++;
+        save_map(w, line, w->index);
+        ft_strdel(&line);
+        w->index++;
         return (1);
     }
     return (0);
@@ -49,17 +50,24 @@ int             create_standard(t_w *w, char *line)
 
 void 			count_of_string(t_w *w, char *file)
 {
-    char *line;
-    int fd;
+    char        *line;
+    int         fd;
 
     w->m.c_of_str = 0;
     fd = open(file, O_RDONLY);
+    while (get_next_line(fd, &line))
+        w->m.c_of_str++;
+    close(fd);
+
+
+    fd = open(file, O_RDONLY);
     if ((w->m.map = (char **) malloc(sizeof(char *) * w->m.c_of_str + 1)) == NULL)
         alert_error(2);
+    w->index = 0;
     while (get_next_line(fd, &line))
     {
         printf("%s     [%d]\n",  line, w->m.c_of_str);
-        if (create_standard(w, line))
+        if ((create_standard(w, line)))
         {
             ft_strdel(&line);
             continue;
@@ -69,10 +77,11 @@ void 			count_of_string(t_w *w, char *file)
             ft_strdel(&line);
             alert_error(1);
         }
-        save_map(w, line, w->m.c_of_str);
-        w->m.c_of_str++;
+
+        save_map(w, line, w->index);
+        w->index++;
         ft_strdel(&line);
     }
-    w->m.map[w->m.c_of_str] = NULL;
+    w->m.map[w->index] = NULL;
     close(fd);
 }
