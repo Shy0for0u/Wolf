@@ -6,27 +6,29 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/pavtr/.CLion2019.2/Wolf/includes/wolf.h
+/Users/dgorold-/CLionProjects/wolfv2/includes/wolf.h
 ../libft/includes/libft.h
-C:/Users/pavtr/.CLion2019.2/Wolf/libft/includes/libft.h
+/Users/dgorold-/CLionProjects/wolfv2/libft/includes/libft.h
 stdlib.h
 -
 pthread.h
-C:/Users/pavtr/.CLion2019.2/Wolf/includes/pthread.h
+/Users/dgorold-/CLionProjects/wolfv2/includes/pthread.h
+mlx.h
+/Users/dgorold-/CLionProjects/wolfv2/includes/mlx.h
 ../sdl2/win32/include/SDL2/begin_code.h
-C:/Users/pavtr/.CLion2019.2/Wolf/sdl2/win32/include/SDL2/begin_code.h
+/Users/dgorold-/CLionProjects/wolfv2/sdl2/win32/include/SDL2/begin_code.h
 ../sdl2/win32/include/SDL2/close_code.h
-C:/Users/pavtr/.CLion2019.2/Wolf/sdl2/win32/include/SDL2/close_code.h
+/Users/dgorold-/CLionProjects/wolfv2/sdl2/win32/include/SDL2/close_code.h
 
-C:/Users/pavtr/.CLion2019.2/Wolf/libft/includes/get_next_line.h
+/Users/dgorold-/CLionProjects/wolfv2/libft/includes/get_next_line.h
 libft.h
-C:/Users/pavtr/.CLion2019.2/Wolf/libft/includes/libft.h
+/Users/dgorold-/CLionProjects/wolfv2/libft/includes/libft.h
 stdio.h
 -
 fcntl.h
 -
 
-C:/Users/pavtr/.CLion2019.2/Wolf/libft/includes/libft.h
+/Users/dgorold-/CLionProjects/wolfv2/libft/includes/libft.h
 unistd.h
 -
 stdlib.h
@@ -34,13 +36,35 @@ stdlib.h
 string.h
 -
 get_next_line.h
-C:/Users/pavtr/.CLion2019.2/Wolf/libft/includes/get_next_line.h
+/Users/dgorold-/CLionProjects/wolfv2/libft/includes/get_next_line.h
 
-C:/Users/pavtr/.CLion2019.2/Wolf/sdl2/win32/include/SDL2/begin_code.h
+/Users/dgorold-/CLionProjects/wolfv2/sdl2/win32/include/SDL2/begin_code.h
 
-C:/Users/pavtr/.CLion2019.2/Wolf/sdl2/win32/include/SDL2/close_code.h
+/Users/dgorold-/CLionProjects/wolfv2/sdl2/win32/include/SDL2/close_code.h
 
-C:/Users/pavtr/.CLion2019.2/Wolf/src/read_map_helper.c
+/Users/dgorold-/CLionProjects/wolfv2/src/hooks.c
 ../includes/wolf.h
-C:/Users/pavtr/.CLion2019.2/Wolf/includes/wolf.h
+/Users/dgorold-/CLionProjects/wolfv2/includes/wolf.h
+
+/Users/dgorold-/CLionProjects/wolfv2/src/main.c
+../includes/wolf.h
+/Users/dgorold-/CLionProjects/wolfv2/includes/wolf.h
+
+/Users/dgorold-/CLionProjects/wolfv2/src/player_init.c
+../includes/wolf.h
+/Users/dgorold-/CLionProjects/wolfv2/includes/wolf.h
+
+/Users/dgorold-/CLionProjects/wolfv2/src/read_map.c
+../includes/wolf.h
+/Users/dgorold-/CLionProjects/wolfv2/includes/wolf.h
+
+/Users/dgorold-/CLionProjects/wolfv2/src/read_map_helper.c
+../includes/wolf.h
+/Users/dgorold-/CLionProjects/wolfv2/includes/wolf.h
+
+/Users/dgorold-/CLionProjects/wolfv2/src/wolf_process.c
+math.h
+-
+../includes/wolf.h
+/Users/dgorold-/CLionProjects/wolfv2/includes/wolf.h
 
