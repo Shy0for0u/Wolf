@@ -6,7 +6,7 @@
 /*   By: dgorold- <dgorold-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/02 20:22:36 by dgorold-          #+#    #+#             */
-/*   Updated: 2019/10/06 03:43:49 by dgorold-         ###   ########.fr       */
+/*   Updated: 2019/10/06 20:43:54 by dgorold-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@
 #include "../sdl2/win32/include/SDL2/close_code.h"
 
 # define T			"Wolf"
-# define H			400
-# define W			400
+# define H			200
+# define W			320
 # define BOX_SIZE	64
-# define M_PI_180	
+# define M_PI_180	0.017453292519943295
 
 typedef struct		s_mlx
 {
@@ -38,6 +38,12 @@ typedef struct		s_mlx
 	void			*win;
 }					t_mlx;
 
+typedef struct		s_point
+{
+	float 			x;
+	float			y;
+}					t_point;
+
 typedef struct		s_m
 {
 	int             index;
@@ -48,8 +54,11 @@ typedef struct		s_m
 
 typedef struct		s_ray
 {
+	t_point			start;
+	t_point			step;
 	int 			height;
 	float 			dist;
+	int 			type;
 }					t_ray;
 
 typedef struct		s_player
@@ -81,6 +90,6 @@ void				hooks(t_w *w);
 void				process_of_wolf(t_w *w);
 
 void				player_init(t_w *w, t_pl *player);
-void				dda(t_w w, t_2d pnt1, t_2d pnt2)
+void				dda(t_w *w, t_pl *pnt1, t_pl *pnt2);
 
 #endif

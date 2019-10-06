@@ -41,9 +41,9 @@ int				main(int argc, char *argv[])
 
 	if (argc == 2)
 	{
+		player_init(&wolf, wolf.player);
 		read_map(&wolf, argv[1]);
 		initialization_(&wolf);
-		player_init(&wolf, wolf.player);
 		process_of_wolf(&wolf);
 		hooks(&wolf);
 		mlx_loop(wolf.mlx.mlx);

@@ -11,9 +11,11 @@ int 			c_of_words(t_w *w, const char *str) // it is no end
     {
         if (str[x] == ' ' || str[x] == '1' || str[x] == '.' || str[x] == '2')
         {
-            if (str[x] == '1' || str[x] == '.')
+            if (str[x] == '1' || str[x] == '.' || str[x] == '2')
                 elem++;
-            if (str[x] == '2' && w->player->p_y != -1)
+            if (str[x] == '2')
+            	printf("yo");
+            if (str[x] == '2' && w->player->p_y == -1)
 			{
             	w->player->p_y = w->m.index;
             	w->player->p_x = x;
@@ -40,7 +42,7 @@ int             create_standard(t_w *w, char *line)
 {
     if (w->m.index == 0)
     {
-        if ((w->m.elem = c_of_words(line)) == 0)
+        if ((w->m.elem = c_of_words(w, line)) == 0)
         {
             ft_strdel(&line);
             alert_error (1);

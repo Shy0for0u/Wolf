@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/wolfv2.dir/src/dda.c.o"
   "CMakeFiles/wolfv2.dir/src/hooks.c.o"
   "CMakeFiles/wolfv2.dir/src/main.c.o"
   "CMakeFiles/wolfv2.dir/src/player_init.c.o"

@@ -225,6 +225,13 @@ CMakeFiles/wolfv2.dir/libft/get_next_line.c.o: ../libft/./includes/get_next_line
 CMakeFiles/wolfv2.dir/libft/get_next_line.c.o: ../libft/./includes/libft.h
 CMakeFiles/wolfv2.dir/libft/get_next_line.c.o: ../libft/get_next_line.c
 
+CMakeFiles/wolfv2.dir/src/dda.c.o: ../includes/wolf.h
+CMakeFiles/wolfv2.dir/src/dda.c.o: ../libft/includes/get_next_line.h
+CMakeFiles/wolfv2.dir/src/dda.c.o: ../libft/includes/libft.h
+CMakeFiles/wolfv2.dir/src/dda.c.o: ../sdl2/win32/include/SDL2/begin_code.h
+CMakeFiles/wolfv2.dir/src/dda.c.o: ../sdl2/win32/include/SDL2/close_code.h
+CMakeFiles/wolfv2.dir/src/dda.c.o: ../src/dda.c
+
 CMakeFiles/wolfv2.dir/src/hooks.c.o: ../includes/wolf.h
 CMakeFiles/wolfv2.dir/src/hooks.c.o: ../libft/includes/get_next_line.h
 CMakeFiles/wolfv2.dir/src/hooks.c.o: ../libft/includes/libft.h
