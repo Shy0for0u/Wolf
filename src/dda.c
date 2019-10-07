@@ -1,10 +1,44 @@
 #include "../includes/wolf.h"
 
+static double	percent(int start, int end, int current)
+{
+	double		placement;
+	double		distance;
+
+	placement = current - start;
+	distance = end - start;
+	return ((distance == 0) ? 1.0 : (placement / distance));
+}
+
+static int		get_light(int start, int end, double rate)
+{
+	return ((int)((1 - rate) * start + rate * end));
+}
+
+int				get_color(t_2d current, t_2d pnt1, t_2d pnt2)
+{
+	int			red;
+	int			green;
+	int			blue;
+	double		rate;
+
+	if (current.color == pnt2.color)
+		return (current.color);
+	if ((pnt2.x - pnt1.x) > (pnt2.y - pnt1.y))
+		rate = percent((int)pnt1.x, (int)pnt2.x, (int)current.x);
+	else
+		rate = percent((int)pnt1.y, (int)pnt2.y, (int)current.y);
+	red = get_light((pnt1.color >> 16) & 0xFF, (pnt2.color >> 16) & 0xFF, rate);
+	green = get_light((pnt1.color >> 8) & 0xFF, (pnt2.color >> 8) & 0xFF, rate);
+	blue = get_light(pnt1.color & 0xFF, pnt2.color & 0xFF, rate);
+	return ((red << 16) | (green << 8) | blue);
+}
+
+
 static int		ft_max(int val1, int val2)
 {
 	return ((val1 > val2) ? val1 : val2);
 }
-
 
 static int		get_l(int ixs, int iys, int ixe, int iye)
 {
@@ -16,42 +50,47 @@ static int		get_l(int ixs, int iys, int ixe, int iye)
 	return (ft_max(ilx, ily));
 }
 
-//void			pixel_to_img(t_w *w, int y, int x)
-//{
-//	int 		index;
-//
-//	index = (x * 4 + w->mlx.sl * y);
-//	w->mlx.data[index] = (char)0xff;
-//	w->mlx.data[index + 1] = (char)0xff;
-//	w->mlx.data[index + 2] = (char)0xff;
-//}
+static int		check_edge(int x, int y)
+{
+	if (x > (W - 1) || x < 1)
+		return (0);
+	if (y > (H - 1) || y < 1)
+		return (0);
+	return (1);
+}
 
-void			dda(t_w *w, t_pl *pnt1, t_pl *pnt2)
+static void		write_index(t_w *w, int index, t_2d cur)
+{
+	w->mlx.data[index] = (char)(cur.color >> 16 & 0xFF);
+	w->mlx.data[index + 1] = (char)(cur.color >> 8 & 0xFF);
+	w->mlx.data[index + 2] = (char)(cur.color & 0xFF);
+}
+
+void			dda(t_w *w, t_2d pnt1, t_2d pnt2)
 {
 	int			l;
 	double		dx;
 	double		dy;
-	t_pl		current;
+	t_2d		current;
 	int			index;
 
-	current.p_x = (int)((double)(pnt1->p_x) + 0.5);
-	current.p_y = (int)((double)(pnt1->p_y) + 0.5);
-	l = get_l((int)floor(current.p_x), (int)floor(current.p_y),
-			  (int)floor(pnt2->p_x + 0.5), (int)floor(pnt2->p_y + 0.5));
-	dx = ((pnt2->p_x - pnt1->p_x) / l);
-	dy = ((pnt2->p_y - pnt1->p_y) / l);
+	current.x = pnt1.x ;
+	current.y = pnt1.y ;
+	l = get_l((int)floor(current.x), (int)floor(current.y),
+			  (int)floor(pnt2.x), (int)floor(pnt2.y));
+	dx = ((pnt2.x - pnt1.x) / l);
+	dy = ((pnt2.y - pnt1.y) / l);
 	while (l--)
 	{
-		current.p_x += dx;
-		current.p_y += dy;
-		index = (int)(current.p_x) * 4 + w->mlx.sl * (int)current.p_y;
-		w->mlx.data[index] = (char)0xff;
-		w->mlx.data[index + 1] = (char)0xff;
-		w->mlx.data[index + 2] = (char)0xff;
+		current.x += dx;
+		current.y += dy;
+		index = (int)(current.x) * 4 + w->mlx.sl * (int)current.y;
+		w->mlx.data[index] = (char)(current.color >> 16 & 0xFF);
+		w->mlx.data[index + 1] = (char)(current.color >> 8 & 0xFF);
+		w->mlx.data[index + 2] = (char)(current.color & 0xFF);
+//		current.color = get_color(current, pnt1, pnt2);
+//		if (check_edge((int)current.x, (int)current.y))
+//			write_index(w, index, current);
 	}
 }
-
-//
-// Created by Dremora lord Gorold goodbrother on 06/10/2019.
-//
 

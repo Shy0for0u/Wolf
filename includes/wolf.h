@@ -6,7 +6,7 @@
 /*   By: dgorold- <dgorold-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/02 20:22:36 by dgorold-          #+#    #+#             */
-/*   Updated: 2019/10/06 20:43:54 by dgorold-         ###   ########.fr       */
+/*   Updated: 2019/10/07 22:37:27 by dgorold-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,18 @@
 #include "../sdl2/win32/include/SDL2/close_code.h"
 
 # define T			"Wolf"
-# define H			200
-# define W			320
+# define H			2000
+# define W			2000
 # define BOX_SIZE	64
 # define M_PI_180	0.017453292519943295
+
+typedef struct	s_2d
+{
+	double		x;
+	double		y;
+	int			color;
+
+}				t_2d;
 
 typedef struct		s_mlx
 {
@@ -71,6 +79,7 @@ typedef struct		s_player
 
 typedef struct		s_w
 {
+	char 			*image_data;
 	int				half_height;
 	int				half_width;
 	int 			dist_to_pp;
@@ -79,6 +88,8 @@ typedef struct		s_w
 	int 			**array;
 	t_m				m;
 }					t_w;
+
+void            print_map_int(t_w *w);
 
 void		    	alert_error(int key);
 int 			    read_map(t_w *w, char *file);
@@ -90,6 +101,6 @@ void				hooks(t_w *w);
 void				process_of_wolf(t_w *w);
 
 void				player_init(t_w *w, t_pl *player);
-void				dda(t_w *w, t_pl *pnt1, t_pl *pnt2);
+void			dda(t_w *w, t_2d pnt1, t_2d pnt2);
 
 #endif

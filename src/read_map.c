@@ -57,6 +57,8 @@ void			w_data_in_map(t_w *w) // it is no end
         {
             if (array_c[x][0] == '1')   // ft_itoa.c
                 w->array[y + 1][x + 1] = 1;
+            else if (array_c[x][0] == '2')
+            	w->array[y + 1][x + 1] = 2;
             else if (array_c[x][0] == '.')
                 w->array[y + 1][x + 1] = 0;
             x++;
@@ -105,7 +107,7 @@ int 			read_map(t_w *w, char *file)
 {
     int 		i = 0;
     validation_of_map(w, file);
-    print_map_int(w);    // delete
+//    print_map_int(w);    // delete
 
     printf("\nmap data \n");
     while (w->m.map[i])
