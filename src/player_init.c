@@ -1,11 +1,11 @@
 #include "../includes/wolf.h"
 
-void			player_init(t_w *w, t_pl *player)
+void			player_init(t_w *w)
 {
-	player->direction = 270;
-	player->max_dist = 25;
-	player->p_x = -1;
-	player->p_y = -1;
+	w->player.direction = 270;
+	w->player.max_dist = 25;
+	w->player.p_x = -1;
+	w->player.p_y = -1;
 
 }
 //

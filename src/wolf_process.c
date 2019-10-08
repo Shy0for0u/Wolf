@@ -116,11 +116,11 @@ void			print_squire(t_w *w, int y, int x)
 
 int			is_wall(t_w *w, int Ax, int Ay)
 {
-	if (Ay > w->m.map_h + 2 || Ay < 0)
+	if (Ay > (w->m.map_h + 2) || Ay > 0)
 		return (1);
-	if (Ax > w->m.map_w + 2 || Ax < 0)
+	if (Ax > (w->m.map_w + 2) || Ax < 0)
 		return (1);
-	if (w->array[Ay][Ax] == 0)
+	if (w->array[Ay][Ax] == 1)
 		return (1);
 	return (0);
 }
@@ -131,18 +131,18 @@ void		calc(t_w *w)
 	int 	Xa;
 	int 	Ax;
 	int 	Ay;
-	if (sinf(0.785398f) > 0)
+	if (sinf(0.785398f) < 0)
 	{
-		Ay = (int)(w->player->p_y / 64) * 64 - 1;
+		Ay = (int)(w->player.p_y / 64) * 64 - 1;
 		Ya = -64;
 	}
-	else if (sinf(0.785398f) < 0)
+	else if (sinf(0.785398f) > 0)
 	{
-		Ay = (int)(w->player->p_y / 64) * 64 + 64;
+		Ay = (int)(w->player.p_y / 64) * 64 + 64;
 		Ya = 64;
 	}
 	Xa = 64 / tanf(0.785398f);
-	Ax = w->player->p_x + (w->player->p_y - Ay) / tanf(0.785398f);
+	Ax = w->player.p_x + (w->player.p_y - Ay) / tanf(0.785398f);
 	while (!is_wall(w, Ax / 64, Ay / 64))
 	{
 		Ax = Ax + Xa;
@@ -153,8 +153,8 @@ void		calc(t_w *w)
 
 
 	t_2d	player;
-	player.x = w->player->p_x;
-	player.y = w->player->p_y;
+	player.x = w->player.p_x;
+	player.y = w->player.p_y;
 	dda(w, player, w->p);
 }
 

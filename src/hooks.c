@@ -6,7 +6,7 @@
 /*   By: dgorold- <dgorold-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/06 00:00:47 by dgorold-          #+#    #+#             */
-/*   Updated: 2019/10/08 22:52:26 by dgorold-         ###   ########.fr       */
+/*   Updated: 2019/10/09 00:00:37 by dgorold-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,20 @@ int 		deal_key(int key, t_w *w)
 	if (key == 1) // s
 		printf("yp2");
 
-	calc(w);
+//	calc(w);
+	process_of_wolf(w);
+	return (0);
+}
+
+int      update(t_w *w)
+{
+//	calc(w);
 	process_of_wolf(w);
 	return (0);
 }
 
 void		hooks(t_w *w)
 {
-	mlx_hook(w->mlx.win, 2, 5, deal_key, &w); /*  fail  */
+	mlx_hook(w->mlx.win, 2, 5, deal_key, w);
+	mlx_loop_hook(w->mlx.mlx, update, w);
 }

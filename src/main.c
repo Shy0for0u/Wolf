@@ -39,16 +39,17 @@ void			initialization_(t_w *w)
 
 int				main(int argc, char *argv[])
 {
-	t_w			wolf;
+	t_w			*wolf;
 
+	wolf = (t_w*)malloc(sizeof(t_w));
 	if (argc == 2)
 	{
-		player_init(&wolf, wolf.player);
-		read_map(&wolf, argv[1]);
-		initialization_(&wolf);
-		process_of_wolf(&wolf);
-		hooks(&wolf);
-		mlx_loop(wolf.mlx.mlx);
+		player_init(wolf);
+		read_map(wolf, argv[1]);
+		initialization_(wolf);
+//		process_of_wolf(wolf);
+		hooks(wolf);
+		mlx_loop(wolf->mlx.mlx);
 	}
 	return 0;
 }

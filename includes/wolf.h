@@ -6,7 +6,7 @@
 /*   By: dgorold- <dgorold-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/02 20:22:36 by dgorold-          #+#    #+#             */
-/*   Updated: 2019/10/08 22:38:19 by dgorold-         ###   ########.fr       */
+/*   Updated: 2019/10/08 23:41:01 by dgorold-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ typedef struct		s_w
 	int				half_height;
 	int				half_width;
 	int 			dist_to_projection_plane;
-	t_pl			*player;
+	t_pl			player;
 	t_mlx			mlx;
 	int 			**array;
 	t_m				m;
@@ -106,7 +106,7 @@ void 			    count_of_string(t_w *w, char *file);
 void				hooks(t_w *w);
 void				process_of_wolf(t_w *w);
 
-void				player_init(t_w *w, t_pl *player);
+void				player_init(t_w *w);
 void			dda(t_w *w, t_2d pnt1, t_2d pnt2);
 void		calc(t_w *w);
 
