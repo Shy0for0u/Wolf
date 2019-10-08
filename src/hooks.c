@@ -6,7 +6,7 @@
 /*   By: dgorold- <dgorold-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/06 00:00:47 by dgorold-          #+#    #+#             */
-/*   Updated: 2019/10/09 00:00:37 by dgorold-         ###   ########.fr       */
+/*   Updated: 2019/10/09 00:37:08 by dgorold-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,15 @@ int 		deal_key(int key, t_w *w)
 	if (key == 53)
 		exit(0);
 	if (key == 13) // w
-		printf("yo");
+		w->player.angle += 0.1f;
 	if (key == 1) // s
-		printf("yp2");
+		w->player.angle -= 0.1f;
 
-//	calc(w);
-	process_of_wolf(w);
 	return (0);
 }
 
 int      update(t_w *w)
 {
-//	calc(w);
 	process_of_wolf(w);
 	return (0);
 }

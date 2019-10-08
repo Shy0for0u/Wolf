@@ -74,6 +74,7 @@ void			dda(t_w *w, t_2d pnt1, t_2d pnt2)
 	t_2d		current;
 	int			index;
 
+	current.color = 0xffffff;
 	current.x = pnt1.x + 0.5;
 	current.y = pnt1.y + 0.5;
 	l = get_l((int)floor(current.x), (int)floor(current.y),
@@ -88,7 +89,7 @@ void			dda(t_w *w, t_2d pnt1, t_2d pnt2)
 		w->mlx.data[index] = (char)(current.color >> 16 & 0x1a);
 		w->mlx.data[index + 1] = (char)(current.color >> 8 & 0x2c);
 		w->mlx.data[index + 2] = (char)(current.color & 0x3d);
-//		current.color = get_color(current, pnt1, pnt2);
+		current.color = get_color(current, pnt1, pnt2);
 //		if (check_edge((int)current.x, (int)current.y))
 			write_index(w, index, current);
 	}

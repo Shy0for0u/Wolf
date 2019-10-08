@@ -46,9 +46,7 @@ get_next_line.h
 
 /Users/dgorold-/CLionProjects/wolfv2/sdl2/win32/include/SDL2/close_code.h
 
-/Users/dgorold-/CLionProjects/wolfv2/src/wolf_process.c
-math.h
--
+/Users/dgorold-/CLionProjects/wolfv2/src/read_map.c
 ../includes/wolf.h
 /Users/dgorold-/CLionProjects/wolfv2/includes/wolf.h
 

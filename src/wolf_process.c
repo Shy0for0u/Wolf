@@ -100,18 +100,27 @@ void			pixel_to_img(t_w *w, int y, int x)
 
 void			print_squire(t_w *w, int y, int x)
 {
-	int 	j = y;
-	while (j < y + 10)
-	{
-		int i = x;
-		while (i < x + 10)
-		{
-			pixel_to_img(w, j, i);
-			i++;
-		}
-		j++;
-	}
+	t_2d TL;
+	t_2d TR;
+	t_2d BL;
+	t_2d BR;
 
+	TL.color= 0xff0000;
+	TR.color= 0xff0000;
+	BL.color= 0xff0000;
+	BR.color= 0xff0000;
+	TL.y = y * 64;
+	TL.x = x * 64;
+	TR.y = y * 64;
+	TR.x = x * 64 + 64;
+	BL.y = y * 64 + 64;
+	BL.x = x * 64;
+	BR.y = y * 64 + 64;
+	BR.x = x * 64 + 64;
+	dda(w, TL, TR);
+	dda(w, TL, BL);
+	dda(w, TR, BR);
+	dda(w, BL, BR);
 }
 
 int			is_wall(t_w *w, int Ax, int Ay)
@@ -131,18 +140,18 @@ void		calc(t_w *w)
 	int 	Xa;
 	int 	Ax;
 	int 	Ay;
-	if (sinf(0.785398f) < 0)
+	if (sinf(w->player.angle) < 0)
 	{
 		Ay = (int)(w->player.p_y / 64) * 64 - 1;
 		Ya = -64;
 	}
-	else if (sinf(0.785398f) > 0)
+	else if (sinf(w->player.angle) > 0)
 	{
 		Ay = (int)(w->player.p_y / 64) * 64 + 64;
 		Ya = 64;
 	}
-	Xa = 64 / tanf(0.785398f);
-	Ax = w->player.p_x + (w->player.p_y - Ay) / tanf(0.785398f);
+	Xa = 64 / tanf(w->player.angle);
+	Ax = w->player.p_x + (w->player.p_y - Ay) / tanf(w->player.angle);
 	while (!is_wall(w, Ax / 64, Ay / 64))
 	{
 		Ax = Ax + Xa;
@@ -167,14 +176,14 @@ void			process_of_wolf(t_w *w)
 		while (x < w->m.map_w + 2)
 		{
 			if (w->array[y][x] == 1)
-				print_squire(w, y * 5, x * 5);
+				print_squire(w, y, x);
 			if (w->array[y][x] == 2)
-				pixel_to_img(w, y * 5, x * 5);
+				pixel_to_img(w, y, x);
 			x++;
 		}
 		y++;
 	}
 	calc(w);
 
-	mlx_put_image_to_window(w->mlx.mlx, w->mlx.win, w->mlx.img, W * 0.18, H * 0.18);
+	mlx_put_image_to_window(w->mlx.mlx, w->mlx.win, w->mlx.img, 0, 0);
 }

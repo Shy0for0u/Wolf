@@ -6,6 +6,7 @@ void			player_init(t_w *w)
 	w->player.max_dist = 25;
 	w->player.p_x = -1;
 	w->player.p_y = -1;
+	w->player.angle = 0.785398f;
 
 }
 //

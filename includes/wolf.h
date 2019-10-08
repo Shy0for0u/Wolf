@@ -6,7 +6,7 @@
 /*   By: dgorold- <dgorold-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/02 20:22:36 by dgorold-          #+#    #+#             */
-/*   Updated: 2019/10/08 23:41:01 by dgorold-         ###   ########.fr       */
+/*   Updated: 2019/10/09 01:22:13 by dgorold-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@
 #include "../sdl2/win32/include/SDL2/close_code.h"
 
 # define T			"Wolf"
-# define H			400
-# define W			640
+# define H			1000
+# define W			1000
 # define BOX_SIZE	64
 # define M_PI_180	0.017453292519943295
 
@@ -74,6 +74,7 @@ typedef struct		s_ray
 
 typedef struct		s_player
 {
+	float 			angle;
 	double 			direction;
 	int				max_dist;
 	int 			p_x;
