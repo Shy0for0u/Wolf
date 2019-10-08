@@ -6,7 +6,7 @@
 /*   By: dgorold- <dgorold-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/02 20:22:36 by dgorold-          #+#    #+#             */
-/*   Updated: 2019/10/07 22:37:27 by dgorold-         ###   ########.fr       */
+/*   Updated: 2019/10/08 22:38:19 by dgorold-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include "../libft/includes/libft.h"
 #include <stdlib.h>
+#include <SDL_surface.h>
 #include "pthread.h"
 #include "mlx.h"
 #include "math.h"
@@ -22,8 +23,8 @@
 #include "../sdl2/win32/include/SDL2/close_code.h"
 
 # define T			"Wolf"
-# define H			2000
-# define W			2000
+# define H			400
+# define W			640
 # define BOX_SIZE	64
 # define M_PI_180	0.017453292519943295
 
@@ -55,13 +56,15 @@ typedef struct		s_point
 typedef struct		s_m
 {
 	int             index;
-	int 			elem;
-	int 			c_of_str;
+	int 			map_w;
+	int 			map_h;
 	char			**map;
 }					t_m;
 
 typedef struct		s_ray
 {
+	SDL_Surface 	*texture;
+	int 			offset;
 	t_point			start;
 	t_point			step;
 	int 			height;
@@ -79,10 +82,13 @@ typedef struct		s_player
 
 typedef struct		s_w
 {
+	t_2d			p;
+	float 			projection_plane;
+	float 			angle_between_rays;
 	char 			*image_data;
 	int				half_height;
 	int				half_width;
-	int 			dist_to_pp;
+	int 			dist_to_projection_plane;
 	t_pl			*player;
 	t_mlx			mlx;
 	int 			**array;
@@ -102,5 +108,6 @@ void				process_of_wolf(t_w *w);
 
 void				player_init(t_w *w, t_pl *player);
 void			dda(t_w *w, t_2d pnt1, t_2d pnt2);
+void		calc(t_w *w);
 
 #endif

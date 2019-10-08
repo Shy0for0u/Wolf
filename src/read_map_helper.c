@@ -42,7 +42,7 @@ int             create_standard(t_w *w, char *line)
 {
     if (w->m.index == 0)
     {
-        if ((w->m.elem = c_of_words(w, line)) == 0)
+        if ((w->m.map_w = c_of_words(w, line)) == 0)
         {
             ft_strdel(&line);
             alert_error (1);
@@ -59,13 +59,13 @@ void 			count_of_string(t_w *w, char *file)
     char        *line;
     int         fd;
 
-    w->m.c_of_str = 0;
+    w->m.map_h = 0;
     fd = open(file, O_RDONLY);
     while (get_next_line(fd, &line))
-        w->m.c_of_str++;
+        w->m.map_h++;
     close(fd);
     fd = open(file, O_RDONLY);
-    if ((w->m.map = (char **) malloc(sizeof(char *) * (w->m.c_of_str + 1))) == NULL)
+    if ((w->m.map = (char **) malloc(sizeof(char *) * (w->m.map_h + 1))) == NULL)
         alert_error(2);
     w->m.index = 0;
     while (get_next_line(fd, &line))
@@ -75,7 +75,7 @@ void 			count_of_string(t_w *w, char *file)
             ft_strdel(&line);
             continue;
         }
-        if (w->m.elem != c_of_words(w, line))
+        if (w->m.map_w != c_of_words(w, line))
         {
             ft_strdel(&line);
             alert_error(1);

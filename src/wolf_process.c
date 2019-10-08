@@ -55,6 +55,15 @@
 //	return (ray);
 //}
 //
+//void			calc_wall(t_ray *ray, float angle)
+//{
+//	if (ray->type == 1)
+//	{
+//		ray->offset = (int)ray->start.x % 64;
+//		ray.te
+//	}
+//}
+//
 //t_ray 			*get_ray(t_w *w, int x, float angle)
 //{
 //	t_ray		*vert;
@@ -65,6 +74,7 @@
 //	horiz = init_horiz(w->player->p_x, w->player->p_y, angle);
 //	vert = init_vert(w->player->p_x, w->player->p_y, angle);
 //	result = choose_ray(w, horiz, vert, angle);
+//	calc_wall(result, angle);
 //	return (result);
 //}
 //
@@ -74,13 +84,10 @@
 //	t_pl		*wall;
 //
 //	wall = (t_pl *)malloc(sizeof(t_pl) * 1000);
-//	wall->p_x = x;
-//	wall->p_y = w->m.index;
 //	ray = get_ray(w, x, angle);
 ////	ray->height = BOX_SIZE / ray->dist * w->dist_to_pp;
-//	dda(w, w->player, wall);
 //}
-
+//
 void			pixel_to_img(t_w *w, int y, int x)
 {
 	int 		index;
@@ -107,46 +114,67 @@ void			print_squire(t_w *w, int y, int x)
 
 }
 
+int			is_wall(t_w *w, int Ax, int Ay)
+{
+	if (Ay > w->m.map_h + 2 || Ay < 0)
+		return (1);
+	if (Ax > w->m.map_w + 2 || Ax < 0)
+		return (1);
+	if (w->array[Ay][Ax] == 0)
+		return (1);
+	return (0);
+}
+
+void		calc(t_w *w)
+{
+	int 	Ya;
+	int 	Xa;
+	int 	Ax;
+	int 	Ay;
+	if (sinf(0.785398f) > 0)
+	{
+		Ay = (int)(w->player->p_y / 64) * 64 - 1;
+		Ya = -64;
+	}
+	else if (sinf(0.785398f) < 0)
+	{
+		Ay = (int)(w->player->p_y / 64) * 64 + 64;
+		Ya = 64;
+	}
+	Xa = 64 / tanf(0.785398f);
+	Ax = w->player->p_x + (w->player->p_y - Ay) / tanf(0.785398f);
+	while (!is_wall(w, Ax / 64, Ay / 64))
+	{
+		Ax = Ax + Xa;
+		Ay = Ay + Ya;
+	}
+	w->p.y = Ay;
+	w->p.x = Ax;
+
+
+	t_2d	player;
+	player.x = w->player->p_x;
+	player.y = w->player->p_y;
+	dda(w, player, w->p);
+}
+
 void			process_of_wolf(t_w *w)
 {
-	int 		y = 0;
-	while(y < w->m.c_of_str + 2)
+	int y = 0;
+	while (y < w->m.map_h + 2)
 	{
-		int 	x = 0;
-		while (x < w->m.elem + 2)
+		int x = 0;
+		while (x < w->m.map_w + 2)
 		{
 			if (w->array[y][x] == 1)
-				print_squire(w, y * 10, x * 10);
+				print_squire(w, y * 5, x * 5);
 			if (w->array[y][x] == 2)
-				pixel_to_img(w, y * 10, x * 10);
+				pixel_to_img(w, y * 5, x * 5);
 			x++;
 		}
 		y++;
 	}
-	t_2d		pnt1;
-	t_2d		pnt2;
-	float c = 0;
-	pnt1.y =  w->player->p_y ;
-	pnt1.x = w->player->p_x ;
-	pnt2.y = 100;
-	pnt2.x = 100;
-//		step.p_x = w->player->p_x + c * cosf(180);
-//		step.p_y = w->player->p_y + c * sinf(180);
-//		pixel_to_img(w, step.p_y * 10, step.p_x * 10);
-	dda(w, pnt2, pnt1);
+	calc(w);
 
-//	int 		x;
-//	float		angle;
-//	float		next_angle;
-//
-//	x = 0;
-//	angle = w->player->direction - (double)(60 * 0.5);
-//	next_angle = 60.0 / W;
-//	while (x < W)
-//	{
-//		cast_single_ray(w, x, angle);
-//		angle = angle + next_angle;
-//		x++;
-//	}
-	mlx_put_image_to_window(w->mlx.mlx, w->mlx.win, w->mlx.img, W * 0.25, H * 0.25);
+	mlx_put_image_to_window(w->mlx.mlx, w->mlx.win, w->mlx.img, W * 0.18, H * 0.18);
 }

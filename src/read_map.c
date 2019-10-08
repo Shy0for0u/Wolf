@@ -7,10 +7,10 @@ void            print_map_int(t_w *w)
 
     y = 0;
     printf("\n");
-    while (y < w->m.c_of_str + 2)
+    while (y < w->m.map_h + 2)
     {
         x = 0;
-        while (x < w->m.elem + 2)
+        while (x < w->m.map_w + 2)
         {
             printf("%d ", w->array[y][x]);
             x++;
@@ -27,16 +27,16 @@ void            map_around(t_w *w)
 
     y = 0;
     x = 0;
-    while (x < (w->m.elem + 2))
+    while (x < (w->m.map_w + 2))
     {
         w->array[0][x] = 1;
-        w->array[w->m.c_of_str + 1][x] = 1;
+        w->array[w->m.map_h + 1][x] = 1;
         x++;
     }
-    while (y < (w->m.c_of_str + 2))
+    while (y < (w->m.map_h + 2))
     {
         w->array[y][0] = 1;
-        w->array[y][w->m.elem + 1] = 1;
+        w->array[y][w->m.map_w + 1] = 1;
         y++;
     }
 }
@@ -74,11 +74,11 @@ void            get_memory_for_map(t_w *w)
 
 	i = 0;
 
-	if ((w->array = (int **)malloc(sizeof(int *) * (w->m.c_of_str + 2))) == NULL)
+	if ((w->array = (int **)malloc(sizeof(int *) * (w->m.map_h + 2))) == NULL)
 		alert_error(2);
-	while (i < (w->m.c_of_str + 2))
+	while (i < (w->m.map_h + 2))
 	{
-		if ((w->array[i] = (int *)malloc(sizeof(int) * (w->m.elem + 2))) == NULL)
+		if ((w->array[i] = (int *)malloc(sizeof(int) * (w->m.map_w + 2))) == NULL)
 		{
 			while (--i)
 			{

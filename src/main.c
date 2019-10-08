@@ -9,7 +9,7 @@ void			alert_error(int key)
 	}
 	if (key == 1)
 	{
-		write(2, "non valid elem\n", 15);
+		write(2, "non valid map_w\n", 15);
 		exit(0);
 	}
 	if (key == 2)
@@ -24,6 +24,7 @@ void			initialization_(t_w *w)
 	float		fov;
 
 	fov = M_PI / 6.0;
+//	w->projection_plane = W * H;
 	w->mlx.mlx = mlx_init();
 	w->mlx.win = mlx_new_window(w->mlx.mlx, W, H, T);
 	w->mlx.img = mlx_new_image(w->mlx.mlx, W, H);
@@ -31,7 +32,8 @@ void			initialization_(t_w *w)
 			&w->mlx.bpp, &w->mlx.sl, &w->mlx.end);
 	w->half_width = (int)(W * 0.5);
 	w->half_height = (int)(H * 0.5);
-	w->dist_to_pp = (int)((float)w->half_width / tanf(fov));
+	w->dist_to_projection_plane = (int)((float)w->half_width / tanf(fov));
+	w->angle_between_rays = fov / W;
 }
 
 
