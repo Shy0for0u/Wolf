@@ -123,57 +123,193 @@ void			print_squire(t_w *w, int y, int x)
 	dda(w, BL, BR);
 }
 
-int			is_wall(t_w *w, int Ax, int Ay)
+int 			is_wall(t_w *w, int y, int x)
 {
-	if (Ay > (w->m.map_h + 2) || Ay > 0)
+	if (x < 0 || y < 0)
 		return (1);
-	if (Ax > (w->m.map_w + 2) || Ax < 0)
+	if (y >= (w->m.map_h) || x >= (w->m.map_w))
 		return (1);
-	if (w->array[Ay][Ax] == 1)
+	if (w->array[y][x] == 1)
 		return (1);
+//int			is_wall(t_w *w, int Ax, int Ay)
+//{
+//	if (Ay < 0 || Ax < 0)
+//		return (1);
+//	else if (Ay > (w->m.map_h) * 64 || Ax > (w->m.map_w) * 64)
+//		return (1);
+//	else if (w->array[Ay][Ax] == 1)
+//		return (1);
 	return (0);
+}
+
+
+
+t_ray		*init_vert(int x, int y, float angle)
+{
+	t_ray	*ray;
+
+	ray = (t_ray *)malloc(sizeof(t_ray));
+	ray->dist = 99999;
+	ray->type = 0;
+	if (cosf(angle) > 0)
+	{
+		ray->start.x = (x & 0xffc0) + 64;
+//		ray->start.y = (x / 64) * 64 + 64;
+		ray->step.x = 64;
+	}
+	else if (cosf(angle) < 0)
+	{
+		ray->start.x = (x & 0xffc0) - 1;
+//		ray->start.y = (x / 64) * 64 - 1;
+		ray->step.x = -64;
+	}
+	else
+		return (ray);
+	ray->step.y = -ray->step.x * tanf(-angle);
+	ray->start.y = y + (ray->start.x - x) * tanf(angle);
+	return (ray);
+}
+
+t_ray		*init_horiz(int x, int y, float angle)
+{
+	t_ray	*ray;
+
+	ray = (t_ray *)malloc(sizeof(t_ray));
+	ray->dist = 99999;
+	ray->type = 1;
+	if (sinf(angle) < 0)
+	{
+//		ray->start.y = (y / 64) * 64 - 1;
+		ray->start.y = (y & 0xffc0) - 1;
+		ray->step.y = -64;
+	}
+	else if (sinf(angle) > 0)
+	{
+		ray->start.y = (y & 0xffc0) + 64;
+//		ray->start.y = (y / 64) * 64 + 64;
+		ray->step.y = 64;
+	}
+	else
+		return (ray);
+	ray->step.x = -ray->step.y / tanf(-angle);
+	ray->start.x = x + (ray->start.y - y) / tanf(angle);
+	return (ray);
+}
+
+t_ray 		*choose_ray(t_w *w, t_ray *horiz, t_ray *vert, float angle)
+{
+	while (!is_wall(w, horiz->start.y / 64, horiz->start.x / 64))
+//	while (!is_wall(w, horiz->start.y, horiz->start.x))
+	{
+		horiz->start.x += horiz->step.x;
+		horiz->start.y += horiz->step.y;
+	}
+	while (!is_wall(w, vert->start.y / 64, vert->start.x / 64))
+//	while (!is_wall(w, vert->start.y, vert->start.x))
+	{
+		vert->start.x += vert->step.x;
+		vert->start.y += vert->step.y;
+	}
+	horiz->dist = fabsf((w->player.p_y - horiz->start.y) / sinf(angle));
+	vert->dist = fabsf((w->player.p_x - vert->start.x) / cosf(angle));
+	if (horiz->dist <= vert->dist)
+	{
+		free(vert);
+		return (horiz);
+	}
+	else
+	{
+		free(horiz);
+		return (vert);
+	}
 }
 
 void		calc(t_w *w)
 {
 	int 	Ya;
 	int 	Xa;
-	int 	Ax;
-	int 	Ay;
-	if (sinf(w->player.angle) < 0)
-	{
-		Ay = (int)(w->player.p_y / 64) * 64 - 1;
-		Ya = -64;
-	}
-	else if (sinf(w->player.angle) > 0)
-	{
-		Ay = (int)(w->player.p_y / 64) * 64 + 64;
-		Ya = 64;
-	}
-	Xa = 64 / tanf(w->player.angle);
-	Ax = w->player.p_x + (w->player.p_y - Ay) / tanf(w->player.angle);
-	while (!is_wall(w, Ax / 64, Ay / 64))
-	{
-		Ax = Ax + Xa;
-		Ay = Ay + Ya;
-	}
-	w->p.y = Ay;
-	w->p.x = Ax;
+//	int 	Ax;
+//	int 	Ay;
+//	if (sinf(w->player.angle) < 0)
+//	{
+//		Ay = (int)(w->player.p_y / 64) * 64 - 1;
+//		Ya = -64;
+//	}
+//	else if (sinf(w->player.angle) > 0)
+//	{
+//		Ay = (int)(w->player.p_y / 64) * 64 + 64;
+//		Ya = 64;
+//	}
+//	Xa = 64 / tanf(w->player.angle);
+//	Ax = w->player.p_x + (w->player.p_y - Ay) / tanf(w->player.angle);
+//	while (!is_wall(w, Ax / 64, Ay / 64))
+//	{
+//		Ax = Ax + Xa;
+//		Ay = Ay + Ya;
+//	}
+	t_ray	*vert;
+	t_ray	*horiz;
+	t_ray	*result;
 
+	horiz = init_horiz(w->player.p_x, w->player.p_y, w->player.angle);
+	vert = init_vert(w->player.p_x, w->player.p_y, w->player.angle);
+	result = choose_ray(w, horiz, vert, w->player.angle);
 
+	t_2d	tail;
 	t_2d	player;
 	player.x = w->player.p_x;
 	player.y = w->player.p_y;
-	dda(w, player, w->p);
+	tail.x = (int)result->start.x;
+	tail.y = (int)result->start.y;
+	dda(w, player, tail);
+//	int By;
+//	int Bx;
+//	if (cosf(w->player.angle) > 0)
+//	{
+//		Bx = (int)(w->player.p_x / 64) * 64 + 64;
+//		Xa = 64;
+//	}
+//	else if (cosf(w->player.angle) < 0)
+//	{
+//		Bx = (int)(w->player.p_x / 64) * 64 - 1;
+//		Xa = -64;
+//	}
+//	Ya =  64 * tanf((w->player.angle));
+//	By = w->player.p_y + (w->player.p_x - Bx) * tanf(w->player.angle);
+//	while (!is_wall(w, Bx / 64, By / 64))
+//	{
+//		Bx = Bx + Xa;
+//		By = By + Ya;
+//	}
+
+//	int Ex;
+//	int Ey;
+//	Ex = fabsf((w->player.p_y - Ay) / sinf(w->player.angle));
+//	Ey = fabsf((w->player.p_x - Bx) / cosf(w->player.angle));
+//	if (Ex < Ey)
+//	{
+//	while (!is_wall(w, vert->start.x / 64, vert->start.y / 64))
+//	{
+//		vert->start.x += vert->step.x;
+//		vert->start.y += vert->step.y;
+//	}
+//	w->p.y = vert->start.y;
+//	w->p.x = vert->start.x;
+//	}
+//	w->p.y = Ay;
+//	w->p.x = Ax;
+
+
+
 }
 
 void			process_of_wolf(t_w *w)
 {
 	int y = 0;
-	while (y < w->m.map_h + 2)
+	while (y < w->m.map_h)
 	{
 		int x = 0;
-		while (x < w->m.map_w + 2)
+		while (x < w->m.map_w)
 		{
 			if (w->array[y][x] == 1)
 				print_squire(w, y, x);

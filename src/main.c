@@ -23,6 +23,8 @@ void			initialization_(t_w *w)
 {
 	float		fov;
 
+	w->m.map_h = w->m.map_h + 2;
+	w->m.map_w = w->m.map_w + 2;
 	fov = M_PI / 6.0;
 //	w->projection_plane = W * H;
 	w->mlx.mlx = mlx_init();

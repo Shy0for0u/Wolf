@@ -17,8 +17,8 @@ int 			c_of_words(t_w *w, const char *str) // it is no end
             	printf("yo");
             if (str[x] == '2' && w->player.p_y == -1)
 			{
-				w->player.p_x = (BOX_SIZE * x) / 32;
-				w->player.p_y = (BOX_SIZE  * w->m.index) / 32;
+//				w->player.p_x = (BOX_SIZE * (x)) / 32;
+//				w->player.p_y = (BOX_SIZE  * (w->m.index)) / 32;
 			}
 
         }
