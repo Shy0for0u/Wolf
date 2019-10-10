@@ -60,10 +60,10 @@ void			w_data_in_map(t_w *w) // it is no end
             else if (array_c[x][0] == '2')
 			{
             	w->array[y + 1][x + 1] = 2;
-            	w->player.p_x = ((x + 1) * 64 + 32);
-            	w->player.p_y = ((w->m.index - 1) * 64 + 32);
-//				w->player.p_x = (BOX_SIZE * (x + 1)) / 32;
-//				w->player.p_y = (BOX_SIZE  * ((w->m.index - 1))) / 32;
+            	w->player.x = ((x + 1) * 64 + 32);
+            	w->player.y = ((w->m.index - 1) * 64 + 32);
+//				w->player.x = (BOX_SIZE * (x + 1)) / 32;
+//				w->player.y = (BOX_SIZE  * ((w->m.index - 1))) / 32;
 			}
             else if (array_c[x][0] == '.')
                 w->array[y + 1][x + 1] = 0;

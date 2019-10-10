@@ -6,7 +6,7 @@
 /*   By: dgorold- <dgorold-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/02 20:22:36 by dgorold-          #+#    #+#             */
-/*   Updated: 2019/10/09 01:22:13 by dgorold-         ###   ########.fr       */
+/*   Updated: 2019/10/11 01:06:40 by dgorold-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@
 #include "../sdl2/win32/include/SDL2/close_code.h"
 
 # define T			"Wolf"
+# define W			1200
 # define H			1000
-# define W			1000
-# define BOX_SIZE	64
+
+# define TEXT_SIZE	64
 # define M_PI_180	0.017453292519943295
 
 typedef struct	s_2d
@@ -49,9 +50,14 @@ typedef struct		s_mlx
 
 typedef struct		s_point
 {
-	float 			x;
-	float			y;
+	double 			x;
+	double			y;
 }					t_point;
+
+//typedef struct		s_view
+//{
+//	double			*dist_for_x;
+//}					t_view;
 
 typedef struct		s_m
 {
@@ -63,29 +69,30 @@ typedef struct		s_m
 
 typedef struct		s_ray
 {
-	SDL_Surface 	*texture;
 	int 			offset;
 	t_point			start;
 	t_point			step;
 	int 			height;
-	float 			dist;
+	double 			dist;
 	int 			type;
 }					t_ray;
 
 typedef struct		s_player
 {
-	float 			angle;
+	double 			angle;
 	double 			direction;
 	int				max_dist;
-	int 			p_x;
-	int 			p_y;
+	double 			fov;
+	int 			x;
+	int 			y;
 }					t_pl;
 
 typedef struct		s_w
 {
 	t_2d			p;
-	float 			projection_plane;
-	float 			angle_between_rays;
+	t_ray			**ray_tmp;
+	double 			projection_plane;
+	double 			angle_between_rays;
 	char 			*image_data;
 	int				half_height;
 	int				half_width;
@@ -94,6 +101,7 @@ typedef struct		s_w
 	t_mlx			mlx;
 	int 			**array;
 	t_m				m;
+//	t_view			*view;
 }					t_w;
 
 void            print_map_int(t_w *w);
@@ -103,10 +111,11 @@ int 			    read_map(t_w *w, char *file);
 int 		    	c_of_words(t_w *w, const char *str);
 int                 create_standard(t_w *w, char *line);
 void 			    count_of_string(t_w *w, char *file);
-
+void			dda2(t_w *w, t_2d pnt1, t_2d pnt2);
 void				hooks(t_w *w);
 void				process_of_wolf(t_w *w);
-
+t_ray		*init_vert(int x, int y, double angle);
+t_ray		*init_horiz(int x, int y, double angle);
 void				player_init(t_w *w);
 void			dda(t_w *w, t_2d pnt1, t_2d pnt2);
 void		calc(t_w *w);

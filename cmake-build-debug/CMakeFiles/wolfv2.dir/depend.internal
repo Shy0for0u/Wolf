@@ -265,6 +265,26 @@ CMakeFiles/wolfv2.dir/src/hooks.c.o
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_surface.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/begin_code.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/close_code.h
+CMakeFiles/wolfv2.dir/src/init_ray.c.o
+ /Users/dgorold-/CLionProjects/wolfv2/includes/wolf.h
+ /Users/dgorold-/CLionProjects/wolfv2/libft/includes/get_next_line.h
+ /Users/dgorold-/CLionProjects/wolfv2/libft/includes/libft.h
+ /Users/dgorold-/CLionProjects/wolfv2/sdl2/win32/include/SDL2/begin_code.h
+ /Users/dgorold-/CLionProjects/wolfv2/sdl2/win32/include/SDL2/close_code.h
+ /Users/dgorold-/CLionProjects/wolfv2/src/init_ray.c
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_blendmode.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_config.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_config_macosx.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_endian.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_error.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_pixels.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_platform.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_rect.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_rwops.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_stdinc.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_surface.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/begin_code.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/close_code.h
 CMakeFiles/wolfv2.dir/src/main.c.o
  /Users/dgorold-/CLionProjects/wolfv2/includes/wolf.h
  /Users/dgorold-/CLionProjects/wolfv2/libft/includes/get_next_line.h

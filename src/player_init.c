@@ -4,12 +4,9 @@ void			player_init(t_w *w)
 {
 	w->player.direction = 270;
 	w->player.max_dist = 25;
-	w->player.p_x = -1;
-	w->player.p_y = -1;
+	w->player.x = -1;
+	w->player.y = -1;
 	w->player.angle = 4.71239f;
+	w->player.fov = M_PI / 6.0;
 
 }
-//
-// Created by Dremora lord Gorold goodbrother on 06/10/2019.
-//
-

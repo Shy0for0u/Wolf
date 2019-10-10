@@ -265,6 +265,26 @@ CMakeFiles/wolfv2.dir/src/hooks.c.o: /Users/dgorold-/Library/Frameworks/SDL2.fra
 CMakeFiles/wolfv2.dir/src/hooks.c.o: /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/begin_code.h
 CMakeFiles/wolfv2.dir/src/hooks.c.o: /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/close_code.h
 
+CMakeFiles/wolfv2.dir/src/init_ray.c.o: ../includes/wolf.h
+CMakeFiles/wolfv2.dir/src/init_ray.c.o: ../libft/includes/get_next_line.h
+CMakeFiles/wolfv2.dir/src/init_ray.c.o: ../libft/includes/libft.h
+CMakeFiles/wolfv2.dir/src/init_ray.c.o: ../sdl2/win32/include/SDL2/begin_code.h
+CMakeFiles/wolfv2.dir/src/init_ray.c.o: ../sdl2/win32/include/SDL2/close_code.h
+CMakeFiles/wolfv2.dir/src/init_ray.c.o: ../src/init_ray.c
+CMakeFiles/wolfv2.dir/src/init_ray.c.o: /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_blendmode.h
+CMakeFiles/wolfv2.dir/src/init_ray.c.o: /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_config.h
+CMakeFiles/wolfv2.dir/src/init_ray.c.o: /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_config_macosx.h
+CMakeFiles/wolfv2.dir/src/init_ray.c.o: /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_endian.h
+CMakeFiles/wolfv2.dir/src/init_ray.c.o: /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_error.h
+CMakeFiles/wolfv2.dir/src/init_ray.c.o: /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_pixels.h
+CMakeFiles/wolfv2.dir/src/init_ray.c.o: /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_platform.h
+CMakeFiles/wolfv2.dir/src/init_ray.c.o: /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_rect.h
+CMakeFiles/wolfv2.dir/src/init_ray.c.o: /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_rwops.h
+CMakeFiles/wolfv2.dir/src/init_ray.c.o: /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_stdinc.h
+CMakeFiles/wolfv2.dir/src/init_ray.c.o: /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_surface.h
+CMakeFiles/wolfv2.dir/src/init_ray.c.o: /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/begin_code.h
+CMakeFiles/wolfv2.dir/src/init_ray.c.o: /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/close_code.h
+
 CMakeFiles/wolfv2.dir/src/main.c.o: ../includes/wolf.h
 CMakeFiles/wolfv2.dir/src/main.c.o: ../libft/includes/get_next_line.h
 CMakeFiles/wolfv2.dir/src/main.c.o: ../libft/includes/libft.h

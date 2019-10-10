@@ -15,10 +15,10 @@ int 			c_of_words(t_w *w, const char *str) // it is no end
                 elem++;
             if (str[x] == '2')
             	printf("yo");
-            if (str[x] == '2' && w->player.p_y == -1)
+            if (str[x] == '2' && w->player.y == -1)
 			{
-//				w->player.p_x = (BOX_SIZE * (x)) / 32;
-//				w->player.p_y = (BOX_SIZE  * (w->m.index)) / 32;
+//				w->player.x = (BOX_SIZE * (x)) / 32;
+//				w->player.y = (BOX_SIZE  * (w->m.index)) / 32;
 			}
 
         }

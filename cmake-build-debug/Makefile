@@ -1770,6 +1770,33 @@ src/hooks.c.s:
 	$(MAKE) -f CMakeFiles/wolfv2.dir/build.make CMakeFiles/wolfv2.dir/src/hooks.c.s
 .PHONY : src/hooks.c.s
 
+src/init_ray.o: src/init_ray.c.o
+
+.PHONY : src/init_ray.o
+
+# target to build an object file
+src/init_ray.c.o:
+	$(MAKE) -f CMakeFiles/wolfv2.dir/build.make CMakeFiles/wolfv2.dir/src/init_ray.c.o
+.PHONY : src/init_ray.c.o
+
+src/init_ray.i: src/init_ray.c.i
+
+.PHONY : src/init_ray.i
+
+# target to preprocess a source file
+src/init_ray.c.i:
+	$(MAKE) -f CMakeFiles/wolfv2.dir/build.make CMakeFiles/wolfv2.dir/src/init_ray.c.i
+.PHONY : src/init_ray.c.i
+
+src/init_ray.s: src/init_ray.c.s
+
+.PHONY : src/init_ray.s
+
+# target to generate assembly for a file
+src/init_ray.c.s:
+	$(MAKE) -f CMakeFiles/wolfv2.dir/build.make CMakeFiles/wolfv2.dir/src/init_ray.c.s
+.PHONY : src/init_ray.c.s
+
 src/main.o: src/main.c.o
 
 .PHONY : src/main.o
@@ -2097,6 +2124,9 @@ help:
 	@echo "... src/hooks.o"
 	@echo "... src/hooks.i"
 	@echo "... src/hooks.s"
+	@echo "... src/init_ray.o"
+	@echo "... src/init_ray.i"
+	@echo "... src/init_ray.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

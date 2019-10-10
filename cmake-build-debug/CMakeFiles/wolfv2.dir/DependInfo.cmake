@@ -65,6 +65,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/dgorold-/CLionProjects/wolfv2/libft/get_next_line.c" "/Users/dgorold-/CLionProjects/wolfv2/cmake-build-debug/CMakeFiles/wolfv2.dir/libft/get_next_line.c.o"
   "/Users/dgorold-/CLionProjects/wolfv2/src/dda.c" "/Users/dgorold-/CLionProjects/wolfv2/cmake-build-debug/CMakeFiles/wolfv2.dir/src/dda.c.o"
   "/Users/dgorold-/CLionProjects/wolfv2/src/hooks.c" "/Users/dgorold-/CLionProjects/wolfv2/cmake-build-debug/CMakeFiles/wolfv2.dir/src/hooks.c.o"
+  "/Users/dgorold-/CLionProjects/wolfv2/src/init_ray.c" "/Users/dgorold-/CLionProjects/wolfv2/cmake-build-debug/CMakeFiles/wolfv2.dir/src/init_ray.c.o"
   "/Users/dgorold-/CLionProjects/wolfv2/src/main.c" "/Users/dgorold-/CLionProjects/wolfv2/cmake-build-debug/CMakeFiles/wolfv2.dir/src/main.c.o"
   "/Users/dgorold-/CLionProjects/wolfv2/src/player_init.c" "/Users/dgorold-/CLionProjects/wolfv2/cmake-build-debug/CMakeFiles/wolfv2.dir/src/player_init.c.o"
   "/Users/dgorold-/CLionProjects/wolfv2/src/read_map.c" "/Users/dgorold-/CLionProjects/wolfv2/cmake-build-debug/CMakeFiles/wolfv2.dir/src/read_map.c.o"
