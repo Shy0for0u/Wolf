@@ -6,7 +6,7 @@
 /*   By: dgorold- <dgorold-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/02 20:22:36 by dgorold-          #+#    #+#             */
-/*   Updated: 2019/10/11 01:06:40 by dgorold-         ###   ########.fr       */
+/*   Updated: 2019/10/11 22:19:04 by dgorold-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 #include "../sdl2/win32/include/SDL2/begin_code.h"
 #include "../sdl2/win32/include/SDL2/close_code.h"
 
+# define WALL0      "../walls/wall0.xpm"
+# define WALL1      "../walls/wall1.xpm"
 # define T			"Wolf"
 # define W			1200
 # define H			1000
@@ -37,27 +39,11 @@ typedef struct	s_2d
 
 }				t_2d;
 
-typedef struct		s_mlx
-{
-	int 			sl;
-	int 			bpp;
-	int				end;
-	char 			*data;
-	void			*mlx;
-	void			*img;
-	void			*win;
-}					t_mlx;
-
 typedef struct		s_point
 {
-	double 			x;
-	double			y;
+    double 			x;
+    double			y;
 }					t_point;
-
-//typedef struct		s_view
-//{
-//	double			*dist_for_x;
-//}					t_view;
 
 typedef struct		s_m
 {
@@ -66,6 +52,18 @@ typedef struct		s_m
 	int 			map_h;
 	char			**map;
 }					t_m;
+
+typedef struct      s_walls
+{
+    int             w;
+    int             h;
+    char            *wall;
+}                   t_walls;
+
+typedef struct      s_textures
+{
+    t_walls         *walls[2];
+}                   t_txt;
 
 typedef struct		s_ray
 {
@@ -79,6 +77,8 @@ typedef struct		s_ray
 
 typedef struct		s_player
 {
+    double          turn;
+    double          speed;
 	double 			angle;
 	double 			direction;
 	int				max_dist;
@@ -87,10 +87,20 @@ typedef struct		s_player
 	int 			y;
 }					t_pl;
 
+typedef struct		s_mlx
+{
+    int 			sl;
+    int 			bpp;
+    int				end;
+    char 			*data;
+    void			*mlx;
+    void			*img;
+    void			*win;
+}					t_mlx;
+
 typedef struct		s_w
 {
 	t_2d			p;
-	t_ray			**ray_tmp;
 	double 			projection_plane;
 	double 			angle_between_rays;
 	char 			*image_data;
@@ -101,7 +111,7 @@ typedef struct		s_w
 	t_mlx			mlx;
 	int 			**array;
 	t_m				m;
-//	t_view			*view;
+	t_txt           t;
 }					t_w;
 
 void            print_map_int(t_w *w);
@@ -111,13 +121,11 @@ int 			    read_map(t_w *w, char *file);
 int 		    	c_of_words(t_w *w, const char *str);
 int                 create_standard(t_w *w, char *line);
 void 			    count_of_string(t_w *w, char *file);
-void			dda2(t_w *w, t_2d pnt1, t_2d pnt2);
 void				hooks(t_w *w);
 void				process_of_wolf(t_w *w);
 t_ray		*init_vert(int x, int y, double angle);
 t_ray		*init_horiz(int x, int y, double angle);
 void				player_init(t_w *w);
 void			dda(t_w *w, t_2d pnt1, t_2d pnt2);
-void		calc(t_w *w);
 
 #endif

@@ -11,6 +11,7 @@ void			pixel_to_img(t_w *w, int y, int x)
 	w->mlx.data[index] = 0xff;
 	w->mlx.data[index + 1] = 0xff;
 	w->mlx.data[index + 2] = 0xff;
+	w->mlx.data[index + 3] = 100;
 }
 
 void			print_squire(t_w *w, int y, int x)
@@ -84,9 +85,6 @@ void		draw_column(t_w *w, t_ray *ray, int x, double angle)
 		pixel_to_img(w, i, x);
 		i++;
 	}
-
-
-
 }
 
 void		draw_ray(t_w *w, t_ray *ray, double angle)
@@ -96,8 +94,8 @@ void		draw_ray(t_w *w, t_ray *ray, double angle)
 
 	player.x = w->player.x;
 	player.y = w->player.y;
-	tail.x = (int)ray->start.x;
-	tail.y = (int)ray->start.y;
+	tail.x = ray->start.x;
+	tail.y = ray->start.y;
 	dda(w, player, tail);
 }
 
@@ -110,12 +108,14 @@ t_ray 		*choose_ray(t_w *w, t_ray *horiz, t_ray *vert, double angle)
 		horiz->start.x += horiz->step.x;
 		horiz->start.y += horiz->step.y;
 	}
-	while (!is_wall(w, vert->start.y / 64, vert->start.x / 64))
+	while (!is_wall(w, vert->start.y / (64), vert->start.x / (64)))
 	{
 		vert->start.x += vert->step.x;
 		vert->start.y += vert->step.y;
 
 	}
+//	vert->start.x++;
+//    vert->start.y++;
 	horiz->dist = fabs((w->player.y - horiz->start.y) / sin(angle));
 	vert->dist = fabs((w->player.x - vert->start.x) / cos(angle));
 	if (horiz->dist <= vert->dist)
@@ -141,8 +141,7 @@ t_ray		*get_ray(t_w *w, double angle)
 	vert = init_vert(w->player.x, w->player.y, angle);
 	result = choose_ray(w, horiz, vert, angle);
 
-	result->dist *= cos(angle - w->angle_between_rays * M_PI_180);
-//	w->view->dist_for_x[x] = result->dist;
+	result->dist *= cos(angle - w->player.direction * M_PI_180);
 	return (result);
 }
 
@@ -178,8 +177,8 @@ void			process_of_wolf(t_w *w)
 
 //	print_map(w);
 
-	angle = w->player.direction - (double)(60 * 0.5);
-	one_angle = 60.0 / W;
+	angle = (w->player.direction - (double)(60 * 0.5)); // * M_PI_180;
+	one_angle = (60.0 / W); // * M_PI_180;
 	int x = 0;
 	while (x < W)
 	{

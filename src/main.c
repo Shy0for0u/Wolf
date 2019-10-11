@@ -19,6 +19,20 @@ void			alert_error(int key)
 	}
 }
 
+void            init_textures(t_w *w)
+{
+    int         height;
+    int         width;
+
+    w->t.walls[0] = (t_walls*)malloc(sizeof(t_walls));
+    w->t.walls[1] = (t_walls*)malloc(sizeof(t_walls));
+//    w->t.walls[0]->wall = (char*)malloc(sizeof(char) * 64 * 64); // malloc delete memory
+//    w->t.walls[1]->wall = (char*)malloc(sizeof(char) * 64 * 64); // malloc delete memory
+
+    w->t.walls[0]->wall = mlx_xpm_file_to_image(w->mlx.mlx, WALL0, &width, &height);
+    w->t.walls[1]->wall = mlx_xpm_file_to_image(w->mlx.mlx, WALL1, &width, &height);
+}
+
 void			initialization_(t_w *w)
 {
 	double		fov;
@@ -35,6 +49,7 @@ void			initialization_(t_w *w)
 	w->half_height = (int)(H * 0.5);
 	w->dist_to_projection_plane = (int)((double)w->half_width / tan(fov));
 	w->angle_between_rays = fov / W;
+	init_textures(w);
 }
 
 
@@ -49,7 +64,7 @@ int				main(int argc, char *argv[])
 	if (argc == 2)
 	{
 		player_init(wolf);
-		read_map(wolf, argv[1]);
+    	read_map(wolf, argv[1]);
 		initialization_(wolf);
 		hooks(wolf);
 		mlx_loop(wolf->mlx.mlx);
