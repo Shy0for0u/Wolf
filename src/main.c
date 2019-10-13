@@ -67,12 +67,11 @@ void            init_textures(t_w *w)
 
 void            malloc_stuff(t_w *w)
 {
-
     w->error = 0;
     w->sdl = (t_sdl *)malloc(sizeof(t_sdl));
     w->texture = (t_textures *)malloc(sizeof(t_textures));
     w->texture->walls = (SDL_Surface **)malloc(sizeof(SDL_Surface *) * 4);
-    w->inputs = (t_inputs *)malloc(sizeof(t_inputs));
+//    w->inputs = (t_inputs *)malloc(sizeof(t_inputs));
 }
 
 void			initialization_(t_w *w)
@@ -83,20 +82,21 @@ void			initialization_(t_w *w)
     if (SDL_Init(SDL_INIT_VIDEO) < 0)
         alert_error(3);
     w->sdl->window = SDL_CreateWindow("SDL2", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, W, H, 0);
-    w->sdl->renderer = SDL_CreateRenderer(w->sdl->window, -1, SDL_RENDERER_SOFTWARE);
-    w->sdl->texture = SDL_CreateTexture(w->sdl->renderer, SDL_PIXELFORMAT_RGB888, SDL_TEXTUREACCESS_STATIC, W, H);
+//    w->sdl->renderer = SDL_CreateRenderer(w->sdl->window, -1, SDL_RENDERER_SOFTWARE);
+//    w->sdl->texture = SDL_CreateTexture(w->sdl->renderer, SDL_PIXELFORMAT_RGB888, SDL_TEXTUREACCESS_STATIC, W, H);
     init_textures(w);
-    w->sdl->pixels = (Uint32 *)malloc(sizeof(Uint32) * W * H);
+//    w->sdl->pixels = (Uint32 *)malloc(sizeof(Uint32) * W * H);
 
 	w->draw_dist = 800;
 	w->m.map_h = w->m.map_h + 2;
 	w->m.map_w = w->m.map_w + 2;
 	fov = (M_PI / 6.0);
-	w->mlx.mlx = mlx_init();
-	w->mlx.win = mlx_new_window(w->mlx.mlx, W, H, T);
-	w->mlx.img = mlx_new_image(w->mlx.mlx, W, H);
-	w->mlx.data = mlx_get_data_addr(w->mlx.img,
-			&w->mlx.bpp, &w->mlx.sl, &w->mlx.end);
+//	w->mlx.mlx = mlx_init();
+//	w->mlx.win = mlx_new_window(w->mlx.mlx, W, H, T);
+//	w->mlx.img = mlx_new_image(w->mlx.mlx, W, H);
+//	w->mlx.data = mlx_get_data_addr(w->mlx.img,
+//			&w->mlx.bpp, &w->mlx.sl, &w->mlx.end);
+    w->sdl->keyboard = SDL_GetKeyboardState(NULL);
 	w->half_width = (int)(W * 0.5);
 	w->half_height = (int)(H * 0.5);
 	w->dist_to_projection_plane = (int)((double)w->half_width / tan(fov));
@@ -104,11 +104,12 @@ void			initialization_(t_w *w)
 	init_textures(w);
 }
 
-int		check_for_quit(SDL_Event *event, t_inputs *inputs)
+int		check_for_quit(SDL_Event *event, t_sdl *sdl)
 {
+//    sdl->keyboard = SDL_GetKeyboardState(NULL);
     if (event->type == SDL_QUIT)
         return (1);
-    if (inputs->keyboard[SDL_SCANCODE_ESCAPE])
+    if (sdl->keyboard[SDL_SCANCODE_ESCAPE])
         return (1);
     return (0);
 }
@@ -130,12 +131,14 @@ void            keyboard_input(t_w *w)
 {
     const Uint8 *key;
 
-    key = w->inputs->keyboard;
+    key = w->sdl->keyboard;
     if (is_move_input(key) && w->player.speed < 3.5)
         w->player.speed += 0.8;
     else if (!is_move_input(key) && w->player.speed > 0)
         w->player.speed -= 1.5;
 }
+
+
 
 int				main(int argc, char *argv[])
 {
@@ -150,13 +153,15 @@ int				main(int argc, char *argv[])
 	    while (1)
         {
 	        SDL_PollEvent(&wolf->sdl->event);
-	        if (check_for_quit(&wolf->sdl->event, wolf->inputs))
+	        if (check_for_quit(&wolf->sdl->event, wolf->sdl))
                 break ;
-	        wolf->inputs->keyboard = SDL_GetKeyboardState(NULL);
+
 	        keyboard_input(wolf);
             process_of_wolf(wolf);
-            SDL_RenderPresent(wolf->sdl->renderer);
+//            SDL_RenderPresent(wolf->sdl->renderer);
 //            hooks(wolf);
+//            wolf->sdl->keyboard = SDL_GetKeyboardState(NULL);
+            SDL_UpdateWindowSurface(wolf->sdl->window);
         }
 //        mlx_loop(wolf->mlx.mlx);
 	}

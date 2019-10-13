@@ -18,8 +18,9 @@
 #include <SDL.h>
 #include <SDL_surface.h>
 #include "pthread.h"
-#include "mlx.h"
+//#include "mlx.h"
 #include "math.h"
+#include "../sdl2/win32/include/SDL2/SDL.h"
 #include "../sdl2/win32/include/SDL2/begin_code.h"
 #include "../sdl2/win32/include/SDL2/close_code.h"
 
@@ -44,10 +45,10 @@ typedef struct	s_2d
 
 }				t_2d;
 
-typedef struct      s_inputs
-{
-    const Uint8     *keyboard;
-}                   t_inputs;
+//typedef struct      s_inputs
+//{
+//
+//}                   t_inputs;
 
 typedef struct		s_point
 {
@@ -114,12 +115,13 @@ typedef struct		s_player
 
 typedef struct      s_sdl
 {
-    Uint32          *pixels;
+    const Uint8     *keyboard;
+//    Uint32          *pixels;
     SDL_Event		event;
     SDL_Surface     *surface;
-    SDL_Renderer    *renderer;
+//    SDL_Renderer    *renderer;
     SDL_Window      *window;
-    SDL_Texture     *texture;
+//    SDL_Texture     *texture;
 }                   t_sdl;
 
 typedef struct		s_mlx
@@ -135,7 +137,7 @@ typedef struct		s_mlx
 
 typedef struct		s_w
 {
-    t_inputs        *inputs;
+//    t_inputs        *inputs;
     t_sdl           *sdl;
     t_textures      *texture;
     t_m				m;

@@ -11,8 +11,8 @@
 
 cmake_minimum_required(VERSION 3.14)
 set(CMAKE_C_STANDARD 99)
-set(EXECUTABLE_NAME wolfv2)
-project(wolfv2 C)
+set(EXECUTABLE_NAME wolf_sdl)
+project(wolf_sdl C)
 
 file(GLOB_RECURSE PROJ_SRC RELATIVE ${CMAKE_SOURCE_DIR} "src/*.c")
 

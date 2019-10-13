@@ -58,6 +58,6 @@ int      update(t_w *w)
 
 void		hooks(t_w *w)
 {
-	mlx_hook(w->mlx.win, 2, 5, deal_key, w);
-	mlx_loop_hook(w->mlx.mlx, update, w);
+//	mlx_hook(w->mlx.win, 2, 5, deal_key, w);
+//	mlx_loop_hook(w->mlx.mlx, update, w);
 }

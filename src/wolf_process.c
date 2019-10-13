@@ -1,18 +1,49 @@
 #include <math.h>
 #include "../includes/wolf.h"
 
-
-
-void			pixel_to_img(t_w *w, int y, int x)
+int    out_of_border(int x, int y)
 {
-	int 		index;
-
-	index = (x * 4 + w->mlx.sl * y);
-	w->mlx.data[index] = 0xff;
-	w->mlx.data[index + 1] = 0xff;
-	w->mlx.data[index + 2] = 0xff;
-	w->mlx.data[index + 3] = 100;
+    if (x < 0 || x > W - 1)
+        return (1);
+    if (y < 0 || y > H - 1)
+        return (1);
+    return (0);
 }
+
+void			pixel_to_img(t_w *w, int y, int x, t_color c)
+{
+    int        offset;
+    unsigned char  *pixels;
+
+    if (out_of_border(x, y))
+        return ;
+    offset = 4 * (y * w->sdl->surface->w + x);
+    pixels = (unsigned char*)w->sdl->surface->pixels;
+    pixels[offset] = c.b;
+    pixels[offset + 1] = c.g;
+    pixels[offset + 2] = c.r;
+//	int 		index;
+//
+//	index = (x * 4 + w->mlx.sl * y);
+//	w->mlx.data[index] = 0xff;
+//	w->mlx.data[index + 1] = 0xff;
+//	w->mlx.data[index + 2] = 0xff;
+//	w->mlx.data[index + 3] = 100;
+}
+//
+//void  set_pixel(SDL_Surface *surface, int x, int y, t_color c)
+//{
+//    int        offset;
+//    unsigned char  *pixels;
+//
+//    if (out_of_border(x, y))
+//        return ;
+//    offset = 4 * (y * surface->w + x);
+//    pixels = (unsigned char*)surface->pixels;
+//    pixels[offset] = c.b;
+//    pixels[offset + 1] = c.g;
+//    pixels[offset + 2] = c.r;
+//}
 
 void			print_squire(t_w *w, int y, int x)
 {
@@ -39,23 +70,23 @@ void			print_squire(t_w *w, int y, int x)
 	dda(w, BL, BR);
 }
 
-void			print_map(t_w *w)
-{
-	int y = 0;
-	while (y < w->m.map_h)
-	{
-		int x = 0;
-		while (x < w->m.map_w)
-		{
-			if (w->array[y][x] == 1)
-				print_squire(w, y, x);
-			if (w->array[y][x] == 2)
-				pixel_to_img(w, y, x);
-			x++;
-		}
-		y++;
-	}
-}
+//void			print_map(t_w *w)w
+//{
+//	int y = 0;
+//	while (y < w->m.map_h)
+//	{
+//		int x = 0;
+//		while (x < w->m.map_w)
+//		{
+//			if (w->array[y][x] == 1)
+//				print_squire(w, y, x);
+//			if (w->array[y][x] == 2)
+//				pixel_to_img(w, y, x);
+//			x++;
+//		}
+//		y++;
+//	}
+//}
 
 int 			is_wall(t_w *w, int y, int x)
 {
@@ -85,6 +116,9 @@ void		draw_column(t_w *w, t_ray *ray, int x, double angle)
 	t_color color;
 
 	ratio = TEXT_SIZE / ray->height;
+	color.r = (char)255;
+	color.g = (char)255;
+	color.b = (char)255;
 	w->half_height = (!(w->half_height % 2)) ? w->half_height : w->half_height--; // ?
 	min = w->half_height - (ray->height * 0.5);
 	max = min + ray->height;
@@ -94,7 +128,7 @@ void		draw_column(t_w *w, t_ray *ray, int x, double angle)
 	while (i < max)
 	{
 //	    get_color(ray->texture, &color, ray->offset, (i - min) * ratio);
-		pixel_to_img(w, i, x);
+		pixel_to_img(w, i, x, color);
 		i++;
 	}
 }
@@ -142,7 +176,7 @@ t_ray 		*choose_ray(t_w *w, t_ray *horiz, t_ray *vert, double angle)
 
 void        calc_wall_data(t_w *w, t_ray *result)
 {
-    result->texture[0] = w->text_data[0];
+//    result->texture[0] = w->text_data[0];
     if (result->type == HORIZ_TYPE)
         result->offset = (int)(result->start.x) % TEXT_SIZE;
     else
