@@ -116,12 +116,9 @@ typedef struct		s_player
 typedef struct      s_sdl
 {
     const Uint8     *keyboard;
-//    Uint32          *pixels;
     SDL_Event		event;
     SDL_Surface     *surface;
-//    SDL_Renderer    *renderer;
     SDL_Window      *window;
-//    SDL_Texture     *texture;
 }                   t_sdl;
 
 typedef struct		s_mlx

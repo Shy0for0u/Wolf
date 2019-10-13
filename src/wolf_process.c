@@ -10,6 +10,24 @@ int    out_of_border(int x, int y)
     return (0);
 }
 
+t_color			get_color2(t_w *w, int y, int x)
+{
+    int        offset;
+    unsigned char  *pixels;
+    t_color     c;
+
+    c.r = (char)255;
+    c.g = (char)255;
+    c.b = (char)255;
+
+    offset = 4 * (y * w->sdl->surface->w + x);
+    pixels = (unsigned char*)w->sdl->surface->pixels;
+    pixels[offset] = c.b;
+    pixels[offset + 1] = c.g;
+    pixels[offset + 2] = c.r;
+    return (c);
+}
+
 void			pixel_to_img(t_w *w, int y, int x, t_color c)
 {
     int        offset;
@@ -22,15 +40,8 @@ void			pixel_to_img(t_w *w, int y, int x, t_color c)
     pixels[offset] = c.b;
     pixels[offset + 1] = c.g;
     pixels[offset + 2] = c.r;
-//	int 		index;
-//
-//	index = (x * 4 + w->mlx.sl * y);
-//	w->mlx.data[index] = 0xff;
-//	w->mlx.data[index + 1] = 0xff;
-//	w->mlx.data[index + 2] = 0xff;
-//	w->mlx.data[index + 3] = 100;
 }
-//
+
 //void  set_pixel(SDL_Surface *surface, int x, int y, t_color c)
 //{
 //    int        offset;
@@ -99,14 +110,6 @@ int 			is_wall(t_w *w, int y, int x)
 	return (0);
 }
 
-//void        get_color(int *texture, t_color c, int x, int y)
-//{
-//    int     *data;
-//    char    *color;
-//
-//
-//}
-
 void		draw_column(t_w *w, t_ray *ray, int x, double angle)
 {
 	int 	min;
@@ -116,9 +119,9 @@ void		draw_column(t_w *w, t_ray *ray, int x, double angle)
 	t_color color;
 
 	ratio = TEXT_SIZE / ray->height;
-	color.r = (char)255;
-	color.g = (char)255;
-	color.b = (char)255;
+	color.r = (char)150;
+	color.g = (char)150;
+	color.b = (char)150;
 	w->half_height = (!(w->half_height % 2)) ? w->half_height : w->half_height--; // ?
 	min = w->half_height - (ray->height * 0.5);
 	max = min + ray->height;
@@ -127,7 +130,7 @@ void		draw_column(t_w *w, t_ray *ray, int x, double angle)
 	i = (min < 0) ? 0 : min;
 	while (i < max)
 	{
-//	    get_color(ray->texture, &color, ray->offset, (i - min) * ratio);
+	    color = get_color2(w, (i - min) * ratio, x);
 		pixel_to_img(w, i, x, color);
 		i++;
 	}
@@ -176,7 +179,6 @@ t_ray 		*choose_ray(t_w *w, t_ray *horiz, t_ray *vert, double angle)
 
 void        calc_wall_data(t_w *w, t_ray *result)
 {
-//    result->texture[0] = w->text_data[0];
     if (result->type == HORIZ_TYPE)
         result->offset = (int)(result->start.x) % TEXT_SIZE;
     else
@@ -220,17 +222,9 @@ void			process_of_wolf(t_w *w)
 	double 	angle;
 	double	one_angle;
 
-//	mlx_clear_window(w->mlx.mlx, w->mlx.win);
-//	mlx_destroy_image(w->mlx.mlx, w->mlx.img);
-//	w->mlx.img = mlx_new_image(w->mlx.mlx, W, H);
-//	w->mlx.data = mlx_get_data_addr(w->mlx.img,
-//									&w->mlx.bpp, &w->mlx.sl, &w->mlx.end);
-
-
-
 //	print_map(w);
 
-	angle = (w->player.direction - (double)(60 * 0.5)); // * M_PI_180;
+	angle = (w->player.direction - (double)(60 * 0.5));
 	one_angle = (60.0 / W); // * M_PI_180;
 	int x = 0;
 	while (x < W)
@@ -239,5 +233,4 @@ void			process_of_wolf(t_w *w)
 		angle = angle + one_angle;
 		x++;
 	}
-//	mlx_put_image_to_window(w->mlx.mlx, w->mlx.win, w->mlx.img, 0, 0);
 }

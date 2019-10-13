@@ -14,7 +14,6 @@
 
 void        player_move(int key, t_w *w)
 {
-
     if (key == 126)
     {
         if (w->array[(w->player.y / 64)][(w->player.x / 64)] != 1)
