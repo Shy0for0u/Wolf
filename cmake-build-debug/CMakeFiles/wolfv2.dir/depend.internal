@@ -232,17 +232,50 @@ CMakeFiles/wolfv2.dir/src/dda.c.o
  /Users/dgorold-/CLionProjects/wolfv2/sdl2/win32/include/SDL2/begin_code.h
  /Users/dgorold-/CLionProjects/wolfv2/sdl2/win32/include/SDL2/close_code.h
  /Users/dgorold-/CLionProjects/wolfv2/src/dda.c
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_assert.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_atomic.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_audio.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_blendmode.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_clipboard.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_config.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_config_macosx.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_cpuinfo.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_endian.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_error.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_events.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_filesystem.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_gamecontroller.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_gesture.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_haptic.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_hints.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_joystick.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_keyboard.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_keycode.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_loadso.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_log.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_main.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_messagebox.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_mouse.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_mutex.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_pixels.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_platform.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_power.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_quit.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_rect.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_render.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_rwops.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_scancode.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_sensor.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_shape.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_stdinc.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_surface.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_system.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_thread.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_timer.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_touch.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_version.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_video.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/begin_code.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/close_code.h
 CMakeFiles/wolfv2.dir/src/hooks.c.o
@@ -252,17 +285,50 @@ CMakeFiles/wolfv2.dir/src/hooks.c.o
  /Users/dgorold-/CLionProjects/wolfv2/sdl2/win32/include/SDL2/begin_code.h
  /Users/dgorold-/CLionProjects/wolfv2/sdl2/win32/include/SDL2/close_code.h
  /Users/dgorold-/CLionProjects/wolfv2/src/hooks.c
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_assert.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_atomic.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_audio.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_blendmode.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_clipboard.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_config.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_config_macosx.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_cpuinfo.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_endian.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_error.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_events.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_filesystem.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_gamecontroller.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_gesture.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_haptic.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_hints.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_joystick.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_keyboard.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_keycode.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_loadso.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_log.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_main.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_messagebox.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_mouse.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_mutex.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_pixels.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_platform.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_power.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_quit.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_rect.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_render.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_rwops.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_scancode.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_sensor.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_shape.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_stdinc.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_surface.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_system.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_thread.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_timer.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_touch.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_version.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_video.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/begin_code.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/close_code.h
 CMakeFiles/wolfv2.dir/src/init_ray.c.o
@@ -272,17 +338,50 @@ CMakeFiles/wolfv2.dir/src/init_ray.c.o
  /Users/dgorold-/CLionProjects/wolfv2/sdl2/win32/include/SDL2/begin_code.h
  /Users/dgorold-/CLionProjects/wolfv2/sdl2/win32/include/SDL2/close_code.h
  /Users/dgorold-/CLionProjects/wolfv2/src/init_ray.c
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_assert.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_atomic.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_audio.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_blendmode.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_clipboard.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_config.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_config_macosx.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_cpuinfo.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_endian.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_error.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_events.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_filesystem.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_gamecontroller.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_gesture.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_haptic.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_hints.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_joystick.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_keyboard.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_keycode.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_loadso.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_log.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_main.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_messagebox.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_mouse.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_mutex.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_pixels.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_platform.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_power.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_quit.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_rect.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_render.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_rwops.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_scancode.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_sensor.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_shape.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_stdinc.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_surface.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_system.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_thread.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_timer.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_touch.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_version.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_video.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/begin_code.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/close_code.h
 CMakeFiles/wolfv2.dir/src/main.c.o
@@ -292,17 +391,50 @@ CMakeFiles/wolfv2.dir/src/main.c.o
  /Users/dgorold-/CLionProjects/wolfv2/sdl2/win32/include/SDL2/begin_code.h
  /Users/dgorold-/CLionProjects/wolfv2/sdl2/win32/include/SDL2/close_code.h
  /Users/dgorold-/CLionProjects/wolfv2/src/main.c
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_assert.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_atomic.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_audio.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_blendmode.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_clipboard.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_config.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_config_macosx.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_cpuinfo.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_endian.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_error.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_events.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_filesystem.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_gamecontroller.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_gesture.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_haptic.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_hints.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_joystick.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_keyboard.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_keycode.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_loadso.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_log.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_main.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_messagebox.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_mouse.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_mutex.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_pixels.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_platform.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_power.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_quit.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_rect.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_render.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_rwops.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_scancode.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_sensor.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_shape.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_stdinc.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_surface.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_system.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_thread.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_timer.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_touch.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_version.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_video.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/begin_code.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/close_code.h
 CMakeFiles/wolfv2.dir/src/player_init.c.o
@@ -312,17 +444,50 @@ CMakeFiles/wolfv2.dir/src/player_init.c.o
  /Users/dgorold-/CLionProjects/wolfv2/sdl2/win32/include/SDL2/begin_code.h
  /Users/dgorold-/CLionProjects/wolfv2/sdl2/win32/include/SDL2/close_code.h
  /Users/dgorold-/CLionProjects/wolfv2/src/player_init.c
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_assert.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_atomic.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_audio.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_blendmode.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_clipboard.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_config.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_config_macosx.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_cpuinfo.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_endian.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_error.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_events.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_filesystem.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_gamecontroller.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_gesture.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_haptic.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_hints.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_joystick.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_keyboard.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_keycode.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_loadso.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_log.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_main.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_messagebox.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_mouse.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_mutex.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_pixels.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_platform.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_power.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_quit.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_rect.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_render.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_rwops.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_scancode.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_sensor.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_shape.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_stdinc.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_surface.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_system.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_thread.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_timer.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_touch.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_version.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_video.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/begin_code.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/close_code.h
 CMakeFiles/wolfv2.dir/src/read_map.c.o
@@ -332,17 +497,50 @@ CMakeFiles/wolfv2.dir/src/read_map.c.o
  /Users/dgorold-/CLionProjects/wolfv2/sdl2/win32/include/SDL2/begin_code.h
  /Users/dgorold-/CLionProjects/wolfv2/sdl2/win32/include/SDL2/close_code.h
  /Users/dgorold-/CLionProjects/wolfv2/src/read_map.c
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_assert.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_atomic.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_audio.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_blendmode.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_clipboard.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_config.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_config_macosx.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_cpuinfo.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_endian.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_error.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_events.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_filesystem.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_gamecontroller.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_gesture.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_haptic.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_hints.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_joystick.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_keyboard.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_keycode.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_loadso.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_log.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_main.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_messagebox.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_mouse.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_mutex.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_pixels.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_platform.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_power.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_quit.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_rect.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_render.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_rwops.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_scancode.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_sensor.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_shape.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_stdinc.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_surface.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_system.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_thread.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_timer.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_touch.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_version.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_video.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/begin_code.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/close_code.h
 CMakeFiles/wolfv2.dir/src/read_map_helper.c.o
@@ -352,17 +550,50 @@ CMakeFiles/wolfv2.dir/src/read_map_helper.c.o
  /Users/dgorold-/CLionProjects/wolfv2/sdl2/win32/include/SDL2/begin_code.h
  /Users/dgorold-/CLionProjects/wolfv2/sdl2/win32/include/SDL2/close_code.h
  /Users/dgorold-/CLionProjects/wolfv2/src/read_map_helper.c
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_assert.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_atomic.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_audio.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_blendmode.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_clipboard.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_config.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_config_macosx.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_cpuinfo.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_endian.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_error.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_events.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_filesystem.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_gamecontroller.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_gesture.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_haptic.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_hints.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_joystick.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_keyboard.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_keycode.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_loadso.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_log.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_main.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_messagebox.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_mouse.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_mutex.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_pixels.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_platform.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_power.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_quit.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_rect.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_render.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_rwops.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_scancode.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_sensor.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_shape.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_stdinc.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_surface.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_system.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_thread.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_timer.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_touch.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_version.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_video.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/begin_code.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/close_code.h
 CMakeFiles/wolfv2.dir/src/wolf_process.c.o
@@ -372,16 +603,49 @@ CMakeFiles/wolfv2.dir/src/wolf_process.c.o
  /Users/dgorold-/CLionProjects/wolfv2/sdl2/win32/include/SDL2/begin_code.h
  /Users/dgorold-/CLionProjects/wolfv2/sdl2/win32/include/SDL2/close_code.h
  /Users/dgorold-/CLionProjects/wolfv2/src/wolf_process.c
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_assert.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_atomic.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_audio.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_blendmode.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_clipboard.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_config.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_config_macosx.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_cpuinfo.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_endian.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_error.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_events.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_filesystem.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_gamecontroller.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_gesture.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_haptic.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_hints.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_joystick.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_keyboard.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_keycode.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_loadso.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_log.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_main.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_messagebox.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_mouse.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_mutex.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_pixels.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_platform.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_power.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_quit.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_rect.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_render.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_rwops.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_scancode.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_sensor.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_shape.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_stdinc.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_surface.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_system.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_thread.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_timer.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_touch.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_version.h
+ /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_video.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/begin_code.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/close_code.h

@@ -6,7 +6,7 @@ t_ray		*init_vert(int x, int y, double angle)
 
 	ray = (t_ray *)malloc(sizeof(t_ray));
 	ray->dist = 99999;
-	ray->type = 0;
+	ray->type = VERT_TYPE;
 	if (cos(angle) > 0)
 	{
 		ray->start.x = (x & 0xffc0) + 64;
@@ -32,7 +32,7 @@ t_ray		*init_horiz(int x, int y, double angle)
 
 	ray = (t_ray *)malloc(sizeof(t_ray));
 	ray->dist = 99999;
-	ray->type = 1;
+	ray->type = HORIZ_TYPE;
 	if (sin(angle) < 0)
 	{
 //		ray->start.y = (y / 64) * 64 - 1;

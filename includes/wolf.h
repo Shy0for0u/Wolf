@@ -6,7 +6,7 @@
 /*   By: dgorold- <dgorold-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/02 20:22:36 by dgorold-          #+#    #+#             */
-/*   Updated: 2019/10/11 22:19:04 by dgorold-         ###   ########.fr       */
+/*   Updated: 2019/10/13 19:47:36 by dgorold-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include "../libft/includes/libft.h"
 #include <stdlib.h>
+#include <SDL.h>
 #include <SDL_surface.h>
 #include "pthread.h"
 #include "mlx.h"
@@ -24,12 +25,16 @@
 
 # define WALL0      "../walls/wall0.xpm"
 # define WALL1      "../walls/wall1.xpm"
+# define WALL2      "../walls/wall2.xpm"
+# define WALL3      "../walls/wall3.xpm"
 # define T			"Wolf"
 # define W			1200
 # define H			1000
 
 # define TEXT_SIZE	64
 # define M_PI_180	0.017453292519943295
+# define HORIZ_TYPE 1
+# define VERT_TYPE 0
 
 typedef struct	s_2d
 {
@@ -38,6 +43,11 @@ typedef struct	s_2d
 	int			color;
 
 }				t_2d;
+
+typedef struct      s_inputs
+{
+    const Uint8     *keyboard;
+}                   t_inputs;
 
 typedef struct		s_point
 {
@@ -53,6 +63,13 @@ typedef struct		s_m
 	char			**map;
 }					t_m;
 
+typedef struct      s_color
+{
+    char            r;
+    char            g;
+    char            b;
+}                   t_color;
+
 typedef struct      s_walls
 {
     int             w;
@@ -62,11 +79,12 @@ typedef struct      s_walls
 
 typedef struct      s_textures
 {
-    t_walls         *walls[2];
-}                   t_txt;
+    SDL_Surface     **walls;
+}                   t_textures;
 
 typedef struct		s_ray
 {
+    int             **texture;
 	int 			offset;
 	t_point			start;
 	t_point			step;
@@ -74,6 +92,13 @@ typedef struct		s_ray
 	double 			dist;
 	int 			type;
 }					t_ray;
+
+typedef struct      s_img
+{
+    int			    width;
+    int		    	height;
+    char            *buff;
+}                   t_img;
 
 typedef struct		s_player
 {
@@ -86,6 +111,16 @@ typedef struct		s_player
 	int 			x;
 	int 			y;
 }					t_pl;
+
+typedef struct      s_sdl
+{
+    Uint32          *pixels;
+    SDL_Event		event;
+    SDL_Surface     *surface;
+    SDL_Renderer    *renderer;
+    SDL_Window      *window;
+    SDL_Texture     *texture;
+}                   t_sdl;
 
 typedef struct		s_mlx
 {
@@ -100,18 +135,24 @@ typedef struct		s_mlx
 
 typedef struct		s_w
 {
+    t_inputs        *inputs;
+    t_sdl           *sdl;
+    t_textures      *texture;
+    t_m				m;
 	t_2d			p;
+    t_pl			player;
+    t_mlx			mlx;
+    int             draw_dist;
+    int             **text_data;
 	double 			projection_plane;
 	double 			angle_between_rays;
 	char 			*image_data;
 	int				half_height;
 	int				half_width;
 	int 			dist_to_projection_plane;
-	t_pl			player;
-	t_mlx			mlx;
+    int             error;
 	int 			**array;
-	t_m				m;
-	t_txt           t;
+
 }					t_w;
 
 void            print_map_int(t_w *w);

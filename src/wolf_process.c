@@ -68,13 +68,24 @@ int 			is_wall(t_w *w, int y, int x)
 	return (0);
 }
 
+//void        get_color(int *texture, t_color c, int x, int y)
+//{
+//    int     *data;
+//    char    *color;
+//
+//
+//}
+
 void		draw_column(t_w *w, t_ray *ray, int x, double angle)
 {
 	int 	min;
 	int		max;
-
+    double  ratio;
 	int 	i;
-	w->half_height = (!(w->half_height % 2)) ? w->half_height : w->half_height--;
+	t_color color;
+
+	ratio = TEXT_SIZE / ray->height;
+	w->half_height = (!(w->half_height % 2)) ? w->half_height : w->half_height--; // ?
 	min = w->half_height - (ray->height * 0.5);
 	max = min + ray->height;
 	if (max > H)
@@ -82,6 +93,7 @@ void		draw_column(t_w *w, t_ray *ray, int x, double angle)
 	i = (min < 0) ? 0 : min;
 	while (i < max)
 	{
+//	    get_color(ray->texture, &color, ray->offset, (i - min) * ratio);
 		pixel_to_img(w, i, x);
 		i++;
 	}
@@ -114,8 +126,6 @@ t_ray 		*choose_ray(t_w *w, t_ray *horiz, t_ray *vert, double angle)
 		vert->start.y += vert->step.y;
 
 	}
-//	vert->start.x++;
-//    vert->start.y++;
 	horiz->dist = fabs((w->player.y - horiz->start.y) / sin(angle));
 	vert->dist = fabs((w->player.x - vert->start.x) / cos(angle));
 	if (horiz->dist <= vert->dist)
@@ -130,6 +140,15 @@ t_ray 		*choose_ray(t_w *w, t_ray *horiz, t_ray *vert, double angle)
 	}
 }
 
+void        calc_wall_data(t_w *w, t_ray *result)
+{
+    result->texture[0] = w->text_data[0];
+    if (result->type == HORIZ_TYPE)
+        result->offset = (int)(result->start.x) % TEXT_SIZE;
+    else
+        result->offset = (int)(result->start.y) % TEXT_SIZE;
+}
+
 t_ray		*get_ray(t_w *w, double angle)
 {
 	t_ray	*vert;
@@ -140,7 +159,7 @@ t_ray		*get_ray(t_w *w, double angle)
 	horiz = init_horiz(w->player.x, w->player.y, angle);
 	vert = init_vert(w->player.x, w->player.y, angle);
 	result = choose_ray(w, horiz, vert, angle);
-
+    calc_wall_data(w, result);
 	result->dist *= cos(angle - w->player.direction * M_PI_180);
 	return (result);
 }
@@ -167,11 +186,11 @@ void			process_of_wolf(t_w *w)
 	double 	angle;
 	double	one_angle;
 
-	mlx_clear_window(w->mlx.mlx, w->mlx.win);
-	mlx_destroy_image(w->mlx.mlx, w->mlx.img);
-	w->mlx.img = mlx_new_image(w->mlx.mlx, W, H);
-	w->mlx.data = mlx_get_data_addr(w->mlx.img,
-									&w->mlx.bpp, &w->mlx.sl, &w->mlx.end);
+//	mlx_clear_window(w->mlx.mlx, w->mlx.win);
+//	mlx_destroy_image(w->mlx.mlx, w->mlx.img);
+//	w->mlx.img = mlx_new_image(w->mlx.mlx, W, H);
+//	w->mlx.data = mlx_get_data_addr(w->mlx.img,
+//									&w->mlx.bpp, &w->mlx.sl, &w->mlx.end);
 
 
 
@@ -186,5 +205,5 @@ void			process_of_wolf(t_w *w)
 		angle = angle + one_angle;
 		x++;
 	}
-	mlx_put_image_to_window(w->mlx.mlx, w->mlx.win, w->mlx.img, 0, 0);
+//	mlx_put_image_to_window(w->mlx.mlx, w->mlx.win, w->mlx.img, 0, 0);
 }

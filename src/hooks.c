@@ -6,7 +6,7 @@
 /*   By: dgorold- <dgorold-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/06 00:00:47 by dgorold-          #+#    #+#             */
-/*   Updated: 2019/10/11 20:53:29 by dgorold-         ###   ########.fr       */
+/*   Updated: 2019/10/13 17:45:43 by dgorold-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void        player_move(int key, t_w *w)
 
     if (key == 126)
     {
-        if (w->array[(w->player.y / 64) + 1][(w->player.x / 64) + 1] != 1)
+        if (w->array[(w->player.y / 64)][(w->player.x / 64)] != 1)
         {
             w->player.x = w->player.x + cos(w->player.direction * M_PI_180) * w->player.speed;
             w->player.y = w->player.y + sin(w->player.direction * M_PI_180) * w->player.speed;
@@ -25,7 +25,7 @@ void        player_move(int key, t_w *w)
     }
     if (key == 125)
     {
-        if (w->array[(w->player.y / 64) + 1][(w->player.x / 64) + 1] != 1)
+        if (w->array[(w->player.y / 64)][(w->player.x / 64)] != 1)
         {
             w->player.x = w->player.x - cos(w->player.direction * M_PI_180) * w->player.speed;
             w->player.y = w->player.y - sin(w->player.direction * M_PI_180) * w->player.speed;
