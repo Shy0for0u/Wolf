@@ -50,7 +50,4 @@ t_ray		*init_horiz(int x, int y, double angle)
 	ray->step.x = -ray->step.y / tan(-angle);
 	ray->start.x = x + (ray->start.y - y) / tan(angle);
 	return (ray);
-}//
-// Created by Dremora lord Gorold goodbrother on 10/10/2019.
-//
-
+}

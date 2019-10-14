@@ -17,16 +17,7 @@ t_color			get_color2(SDL_Surface *texture, int y, int x)
     t_color     c;
 
     offset = 4 * (y * 64 + x);
-//    offset = texture->format->BytesPerPixel * (y * 64 + x);
     pixels = (unsigned char *)texture->pixels;
-
-//    pixels[offset] = c.b;
-//    pixels[offset + 1] = c.g;
-//    pixels[offset + 2] = c.r;
-//    c.r = (char)255;
-//    c.g = (char)255;
-//    c.b = (char)255;
-
     c.r = (char)pixels[offset + 2];
     c.g = (char)pixels[offset + 1];
     c.b = (char)pixels[offset];
@@ -41,7 +32,6 @@ void      pixel_to_img(SDL_Surface *screen, int y, int x, t_color c)
 
     if (out_of_border(x, y))
         return ;
-//    offset = (y * 64 + x);
     offset = 4 * (y * screen->w + x);
     pixels = (unsigned char*)screen->pixels;
     pixels[offset] = c.b;
@@ -49,44 +39,30 @@ void      pixel_to_img(SDL_Surface *screen, int y, int x, t_color c)
     pixels[offset + 2] = c.r;
 }
 
-//void  set_pixel(SDL_Surface *surface, int x, int y, t_color c)
+//void			print_squire(t_w *w, int y, int x)
 //{
-//    int        offset;
-//    unsigned char  *pixels;
+//	t_2d TL;
+//	t_2d TR;
+//	t_2d BL;
+//	t_2d BR;
 //
-//    if (out_of_border(x, y))
-//        return ;
-//    offset = 4 * (y * surface->w + x);
-//    pixels = (unsigned char*)surface->pixels;
-//    pixels[offset] = c.b;
-//    pixels[offset + 1] = c.g;
-//    pixels[offset + 2] = c.r;
+//	TL.color= 0xff0000;
+//	TR.color= 0xff0000;
+//	BL.color= 0xff0000;
+//	BR.color= 0xff0000;
+//	TL.y = y * 64;
+//	TL.x = x * 64;
+//	TR.y = y * 64;
+//	TR.x = x * 64 + 64;
+//	BL.y = y * 64 + 64;
+//	BL.x = x * 64;
+//	BR.y = y * 64 + 64;
+//	BR.x = x * 64 + 64;
+//	dda(w, TL, TR);
+//	dda(w, TL, BL);
+//	dda(w, TR, BR);
+//	dda(w, BL, BR);
 //}
-
-void			print_squire(t_w *w, int y, int x)
-{
-	t_2d TL;
-	t_2d TR;
-	t_2d BL;
-	t_2d BR;
-
-	TL.color= 0xff0000;
-	TR.color= 0xff0000;
-	BL.color= 0xff0000;
-	BR.color= 0xff0000;
-	TL.y = y * 64;
-	TL.x = x * 64;
-	TR.y = y * 64;
-	TR.x = x * 64 + 64;
-	BL.y = y * 64 + 64;
-	BL.x = x * 64;
-	BR.y = y * 64 + 64;
-	BR.x = x * 64 + 64;
-	dda(w, TL, TR);
-	dda(w, TL, BL);
-	dda(w, TR, BR);
-	dda(w, BL, BR);
-}
 
 //void			print_map(t_w *w)w
 //{
@@ -133,25 +109,11 @@ void		draw_column(t_w *w, t_ray *ray, int x, double angle)
     y = (min < 0) ? 0 : min;
     while (y < max)
     {
-        color = get_color2(w->texture->walls[0], (y - min) * ratio, ray->offset);
+        color = get_color2(ray->texture, (y - min) * ratio, ray->offset);
         pixel_to_img(w->sdl->surface, y, x, color);
         y++;
     }
 }
-
-void		draw_ray(t_w *w, t_ray *ray, double angle)
-{
-	t_2d	tail;
-	t_2d	player;
-
-	player.x = w->player.x;
-	player.y = w->player.y;
-	tail.x = ray->start.x;
-	tail.y = ray->start.y;
-	dda(w, player, tail);
-}
-
-
 
 t_ray 		*choose_ray(t_w *w, t_ray *horiz, t_ray *vert, double angle)
 {
@@ -164,7 +126,6 @@ t_ray 		*choose_ray(t_w *w, t_ray *horiz, t_ray *vert, double angle)
 	{
 		vert->start.x += vert->step.x;
 		vert->start.y += vert->step.y;
-
 	}
 	horiz->dist = fabs((w->player.y - horiz->start.y) / sin(angle));
 	vert->dist = fabs((w->player.x - vert->start.x) / cos(angle));
@@ -180,12 +141,18 @@ t_ray 		*choose_ray(t_w *w, t_ray *horiz, t_ray *vert, double angle)
 	}
 }
 
-void        calc_wall_data(t_w *w, t_ray *result)
+void        calc_wall_data(t_w *w, t_ray *result, double angle)
 {
     if (result->type == HORIZ_TYPE)
+    {
         result->offset = (int)(result->start.x) % TEXT_SIZE;
+        result->texture = w->texture->walls[(sin(angle) > 0 ? 0 : 1)];
+    }
     else
+    {
         result->offset = (int)(result->start.y) % TEXT_SIZE;
+        result->texture = w->texture->walls[cos(angle) < 0 ? 2 : 3];
+    }
 }
 
 t_ray		*get_ray(t_w *w, double angle)
@@ -198,7 +165,7 @@ t_ray		*get_ray(t_w *w, double angle)
 	horiz = init_horiz(w->player.x, w->player.y, angle);
 	vert = init_vert(w->player.x, w->player.y, angle);
 	result = choose_ray(w, horiz, vert, angle);
-    calc_wall_data(w, result);
+    calc_wall_data(w, result, angle);
 	result->dist *= cos(angle - w->player.direction * M_PI_180);
 	return (result);
 }
@@ -217,18 +184,15 @@ void		calc_single_ray(t_w *w, int x, double angle)
 	free(ray);
 }
 
-
-
 void			process_of_wolf(t_w *w)
 {
 	double 	angle;
 	double	one_angle;
-
-//	print_map(w);
+    int     x;
 
 	angle = (w->player.direction - (double)(60 * 0.5));
 	one_angle = (60.0 / W);
-	int x = 0;
+	x = 0;
 	while (x < W)
 	{
 		calc_single_ray(w, x, angle);

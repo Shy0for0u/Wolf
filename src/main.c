@@ -66,7 +66,7 @@ void			initialization_(t_w *w)
 	malloc_stuff(w);
     if (SDL_Init(SDL_INIT_VIDEO) < 0)
         alert_error(3);
-    w->sdl->window = SDL_CreateWindow("SDL2", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, W, H, 0);
+    w->sdl->window = SDL_CreateWindow(T, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, W, H, 0);
     w->sdl->surface = SDL_GetWindowSurface(w->sdl->window);
     init_textures(w);
 	w->m.map_h = w->m.map_h + 2;
@@ -88,18 +88,30 @@ int		check_for_quit(SDL_Event *event, t_sdl *sdl)
     return (0);
 }
 
+int             check_position(t_w *w, int x, int y)
+{
+    if (w->array[(y / 64)][(x / 64)] != 1)
+        return (1);
+    return (0);
+}
+
 void            keyboard_input(t_w *w)
 {
     const Uint8 *key;
+    int     tmp_x;
+    int     tmp_y;
 
     key = w->sdl->keyboard;
     if (key[SDL_SCANCODE_W] || key[SDL_SCANCODE_UP])
     {
-        if (w->array[(w->player.y / 64)][(w->player.x / 64)] != 1)
-        {
-            w->player.x = w->player.x + cos(w->player.direction * M_PI_180) * w->player.speed;
-            w->player.y = w->player.y + sin(w->player.direction * M_PI_180) * w->player.speed;
-        }
+        tmp_x = w->player.x;
+        tmp_y = w->player.y;
+        w->player.x = w->player.x + cos(w->player.direction * M_PI_180) * w->player.speed;
+        if (!check_position(w, w->player.x, w->player.y))
+            w->player.x = tmp_x;
+        w->player.y = w->player.y + sin(w->player.direction * M_PI_180) * w->player.speed;
+        if (!check_position(w, w->player.x, w->player.y))
+            w->player.y = tmp_y;
     }
     if (key[SDL_SCANCODE_A] || key[SDL_SCANCODE_LEFT])
     {
@@ -107,11 +119,14 @@ void            keyboard_input(t_w *w)
     }
     if (key[SDL_SCANCODE_S] || key[SDL_SCANCODE_DOWN])
     {
-        if (w->array[(w->player.y / 64)][(w->player.x / 64)] != 1)
-        {
-            w->player.x = w->player.x - cos(w->player.direction * M_PI_180) * w->player.speed;
-            w->player.y = w->player.y - sin(w->player.direction * M_PI_180) * w->player.speed;
-        }
+        tmp_x = w->player.x;
+        tmp_y = w->player.y;
+        w->player.x = w->player.x - cos(w->player.direction * M_PI_180) * w->player.speed;
+        if (!check_position(w, w->player.x, w->player.y))
+            w->player.x = tmp_x;
+        w->player.y = w->player.y - sin(w->player.direction * M_PI_180) * w->player.speed;
+        if (!check_position(w, w->player.x, w->player.y))
+            w->player.y = tmp_y;
     }
     if (key[SDL_SCANCODE_D] || key[SDL_SCANCODE_RIGHT])
     {
