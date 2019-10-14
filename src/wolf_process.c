@@ -10,33 +10,40 @@ int    out_of_border(int x, int y)
     return (0);
 }
 
-t_color			get_color2(t_w *w, int y, int x)
+t_color			get_color2(SDL_Surface *texture, int y, int x)
 {
     int        offset;
     unsigned char  *pixels;
     t_color     c;
 
-    c.r = (char)255;
-    c.g = (char)255;
-    c.b = (char)255;
+    offset = 4 * (y * 64 + x);
+//    offset = texture->format->BytesPerPixel * (y * 64 + x);
+    pixels = (unsigned char *)texture->pixels;
 
-    offset = 4 * (y * w->sdl->surface->w + x);
-    pixels = (unsigned char*)w->sdl->surface->pixels;
-    pixels[offset] = c.b;
-    pixels[offset + 1] = c.g;
-    pixels[offset + 2] = c.r;
+//    pixels[offset] = c.b;
+//    pixels[offset + 1] = c.g;
+//    pixels[offset + 2] = c.r;
+//    c.r = (char)255;
+//    c.g = (char)255;
+//    c.b = (char)255;
+
+    c.r = (char)pixels[offset + 2];
+    c.g = (char)pixels[offset + 1];
+    c.b = (char)pixels[offset];
+
     return (c);
 }
 
-void			pixel_to_img(t_w *w, int y, int x, t_color c)
+void      pixel_to_img(SDL_Surface *screen, int y, int x, t_color c)
 {
     int        offset;
     unsigned char  *pixels;
 
     if (out_of_border(x, y))
         return ;
-    offset = 4 * (y * w->sdl->surface->w + x);
-    pixels = (unsigned char*)w->sdl->surface->pixels;
+//    offset = (y * 64 + x);
+    offset = 4 * (y * screen->w + x);
+    pixels = (unsigned char*)screen->pixels;
     pixels[offset] = c.b;
     pixels[offset + 1] = c.g;
     pixels[offset + 2] = c.r;
@@ -112,28 +119,24 @@ int 			is_wall(t_w *w, int y, int x)
 
 void		draw_column(t_w *w, t_ray *ray, int x, double angle)
 {
-	int 	min;
-	int		max;
+    int   min;
+    int    max;
     double  ratio;
-	int 	i;
-	t_color color;
+    int   y;
+    t_color color;
 
-	ratio = TEXT_SIZE / ray->height;
-	color.r = (char)150;
-	color.g = (char)150;
-	color.b = (char)150;
-	w->half_height = (!(w->half_height % 2)) ? w->half_height : w->half_height--; // ?
-	min = w->half_height - (ray->height * 0.5);
-	max = min + ray->height;
-	if (max > H)
-		max = H;
-	i = (min < 0) ? 0 : min;
-	while (i < max)
-	{
-	    color = get_color2(w, (i - min) * ratio, x);
-		pixel_to_img(w, i, x, color);
-		i++;
-	}
+    ratio = TEXT_SIZE / ray->height;
+    min = w->half_height - (ray->height * 0.5);
+    max = min + ray->height;
+    if (max > H)
+        max = H;
+    y = (min < 0) ? 0 : min;
+    while (y < max)
+    {
+        color = get_color2(w->texture->walls[0], (y - min) * ratio, ray->offset);
+        pixel_to_img(w->sdl->surface, y, x, color);
+        y++;
+    }
 }
 
 void		draw_ray(t_w *w, t_ray *ray, double angle)
@@ -211,7 +214,6 @@ void		calc_single_ray(t_w *w, int x, double angle)
 	ray->height = TEXT_SIZE / ray->dist * w->dist_to_projection_plane;
 
 	draw_column(w, ray, x, angle);
-//	draw_ray(w, ray, angle); //adsfads
 	free(ray);
 }
 
@@ -225,7 +227,7 @@ void			process_of_wolf(t_w *w)
 //	print_map(w);
 
 	angle = (w->player.direction - (double)(60 * 0.5));
-	one_angle = (60.0 / W); // * M_PI_180;
+	one_angle = (60.0 / W);
 	int x = 0;
 	while (x < W)
 	{

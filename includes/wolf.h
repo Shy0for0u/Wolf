@@ -24,10 +24,10 @@
 #include "../sdl2/win32/include/SDL2/begin_code.h"
 #include "../sdl2/win32/include/SDL2/close_code.h"
 
-# define WALL0      "../walls/wall0.xpm"
-# define WALL1      "../walls/wall1.xpm"
-# define WALL2      "../walls/wall2.xpm"
-# define WALL3      "../walls/wall3.xpm"
+# define WALL0      "../walls/1_3.bmp"
+# define WALL1      "../walls/wall1.bmp"
+# define WALL2      "../walls/wall2.bmp"
+# define WALL3      "../walls/wall3.bmp"
 # define T			"Wolf"
 # define W			1200
 # define H			1000
@@ -44,11 +44,6 @@ typedef struct	s_2d
 	int			color;
 
 }				t_2d;
-
-//typedef struct      s_inputs
-//{
-//
-//}                   t_inputs;
 
 typedef struct		s_point
 {
@@ -89,7 +84,7 @@ typedef struct		s_ray
 	int 			offset;
 	t_point			start;
 	t_point			step;
-	int 			height;
+    double 			height;
 	double 			dist;
 	int 			type;
 }					t_ray;
@@ -134,18 +129,12 @@ typedef struct		s_mlx
 
 typedef struct		s_w
 {
-//    t_inputs        *inputs;
     t_sdl           *sdl;
     t_textures      *texture;
     t_m				m;
 	t_2d			p;
     t_pl			player;
     t_mlx			mlx;
-    int             draw_dist;
-    int             **text_data;
-	double 			projection_plane;
-	double 			angle_between_rays;
-	char 			*image_data;
 	int				half_height;
 	int				half_width;
 	int 			dist_to_projection_plane;

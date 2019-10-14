@@ -27,10 +27,15 @@ void			alert_error(int key)
 SDL_Surface     *load_surface(t_w *w, char *file)
 {
     SDL_Surface *surf;
+    SDL_Surface *result;
 
     surf = SDL_LoadBMP(file);
     if (surf != NULL && surf->w == 64 && surf->h == 64)
-        return (surf);
+    {
+        result = SDL_ConvertSurfaceFormat(surf, SDL_PIXELFORMAT_ARGB8888, 1);
+        SDL_FreeSurface(surf);
+        return (result);
+    }
     else
     {
         w->error = 4;
@@ -64,7 +69,6 @@ void			initialization_(t_w *w)
     w->sdl->window = SDL_CreateWindow("SDL2", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, W, H, 0);
     w->sdl->surface = SDL_GetWindowSurface(w->sdl->window);
     init_textures(w);
-	w->draw_dist = 800;
 	w->m.map_h = w->m.map_h + 2;
 	w->m.map_w = w->m.map_w + 2;
 	fov = (M_PI / 6.0);
@@ -72,7 +76,6 @@ void			initialization_(t_w *w)
 	w->half_width = (int)(W * 0.5);
 	w->half_height = (int)(H * 0.5);
 	w->dist_to_projection_plane = (int)((double)w->half_width / tan(fov));
-	w->angle_between_rays = fov / W;
 	init_textures(w);
 }
 
@@ -134,7 +137,6 @@ int				main(int argc, char *argv[])
 	        SDL_PollEvent(&wolf->sdl->event);
 	        if (check_for_quit(&wolf->sdl->event, wolf->sdl))
                 break ;
-
 	        keyboard_input(wolf);
             process_of_wolf(wolf);
             SDL_UpdateWindowSurface(wolf->sdl->window);
