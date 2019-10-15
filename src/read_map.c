@@ -1,24 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   read_map.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dgorold- <dgorold-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/15 23:04:04 by dgorold-          #+#    #+#             */
+/*   Updated: 2019/10/15 23:23:53 by dgorold-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/wolf.h"
-
-void            print_map_int(t_w *w)
-{
-    int         y;
-    int         x;
-
-    y = 0;
-    printf("\n");
-    while (y < w->m.map_h + 2)
-    {
-        x = 0;
-        while (x < w->m.map_w + 2)
-        {
-            printf("%d ", w->array[y][x]);
-            x++;
-        }
-        printf("\n");
-        y++;
-    }
-}
 
 void            map_around(t_w *w)
 {
@@ -39,6 +31,27 @@ void            map_around(t_w *w)
         w->array[y][w->m.map_w + 1] = 1;
         y++;
     }
+}
+
+void            del_array(t_w *w, char **array, int cnt)
+{
+    int         i;
+
+    i = 0;
+    while (array[i] != NULL)
+    {
+        ft_strdel(&array[i]);
+        i++;
+    }
+    free(array);
+    i = 0;
+    while (w->m.map[i])
+    {
+        ft_strdel(&w->m.map[i]);
+        i++;
+    }
+    free(w->m.map);
+
 }
 
 void			w_data_in_map(t_w *w) // it is no end
@@ -65,12 +78,16 @@ void			w_data_in_map(t_w *w) // it is no end
 			}
             else if (array_c[x][0] == '.')
                 w->array[y + 1][x + 1] = 0;
+            else
+                alert_error(2);
             x++;
+
         }
 		// delete memory array_c
         y++;
     }
-	print_map_int(w);
+    del_array(w, array_c, x);
+//	print_map_int(w);
 }
 
 void            get_memory_for_map(t_w *w)
@@ -110,15 +127,6 @@ void 			validation_of_map(t_w *w, char *file)
 
 int 			read_map(t_w *w, char *file)
 {
-    int 		i = 0;
     validation_of_map(w, file);
-//    print_map_int(w);    // delete
-
-    printf("\nmap data \n");
-    while (w->m.map[i])
-    {
-        printf("%s\n", w->m.map[i]);
-        i++;
-    }
     return (0);
 }

@@ -6,66 +6,74 @@
 #    By: dgorold- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/22 10:09:18 by dgorold-          #+#    #+#              #
-#    Updated: 2019/09/16 20:36:40 by dgorold-         ###   ########.fr        #
+#    Updated: 2019/10/16 00:23:43 by dgorold-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC=cc
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
 
-FLAGS=-Wall -Wextra -Werror
-MLX_FINGS=-I /usr/local/include -L /usr/local/lib/ -lmlx -framework OpenGL -framework AppKit
+NAME = Wolf
+INCLUDES = 	-I ./libft/include \
+			-I ./sdl2/SDL2.framework/Headers \
+			-I ./include
 
-NAME=wolfv2
+SRC_PATH =	src
+SRC_LIST =	main.c \
+            hooks.c \
+            init_ray.c \
+            initialization.c \
+            read_map.c \
+            read_map_helper.c \
+            wolf_process.c
 
-ANOTH_L=./libft/
-NAME_L=libft.a
+SRC = $(addprefix $(SRC_PATH)/, $(SRC_LIST))
 
-PATH_SRC=./src/
-FILES=main.c
-PR_FILES=$(addprefix $(PATH_SRC), $(FILES))
+OBJ_LIST = $(SRC_LIST:.c=.o)
+OBJ_PATH = obj
+OBJ = $(addprefix $(OBJ_PATH)/, $(OBJ_LIST))
 
-PATH_OBJ=./obj/
-OBJ=$(patsubst %.c,%.o,$(FILES))
-PR_OBJ=$(addprefix $(PATH_OBJ), $(OBJ))
+LIBFT_PATH = libft
+LIBFT = -L $(LIBFT_PATH) -lft
 
-COLOR=\x1b[33;02m
+LIBS = 	-lm \
+		-lpthread \
+		-F ./sdl2 -framework SDL2
 
-INC=./includes/
+YELLOW = \033[1;33m
+PURPLE = \033[0;35m
+NC = \033[0m
 
 .PHONY: all
 
-all: $(NAME)
+all: make_libft intro make_obj $(NAME)
+	@echo "$(PURPLE)MAKE $(NAME) Done!$(NC)"
 
+intro:
+	@echo "\n$(PURPLE)MAKE $(NAME) Start!$(NC)"
 
-$(NAME): create_obj make_lib $(PR_OBJ)
-	@$(CC) $(FLAGS) $(MLX_FINGS) $(ANOTH_L)$(NAME_L) $(PR_OBJ) -I $(INC) -o $(NAME)
+$(NAME): $(OBJ)
+	@$(CC) $(CFLAGS) $(INCLUDES) $(LIBS) $(OBJ) -o $(NAME) $(LIBFT)
 
+$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c
+	@echo "$(YELLOW)$(NAME): $(notdir $<)$(NC)"
+	@$(CC) $(CFLAGS) $(INCLUDES) -o $@ -c $<
 
-$(PATH_OBJ)%.o: $(PATH_SRC)%.c
-	@echo "$(COLOR)"$<
-	@$(CC) -c $(FLAGS) $< -o $@ -I $(INC)
+make_obj :
+	@mkdir -p obj
 
+make_libft :
+	@make -C ./libft/
 
-make_lib:
-	@make -C $(ANOTH_L)
+clean :
+	@echo "$(YELLOW)Objects Deleted.$(NC)"
+	@/bin/rm -rf $(OBJ_PATH)
 
+fclean :	clean
+	@echo "$(YELLOW)$(NAME) Deleted.$(NC)"
+	@/bin/rm -f $(NAME)
 
-create_obj:
-	@mkdir -p $(PATH_OBJ)
+re :	fclean all
 
-
-clean_lib:
-	@make -C $(ANOTH_L) clean
-
-
-fclean_lib:
-	@make -C $(ANOTH_L) fclean
-
-
-clean:
-	@rm -rf obj
-
-fclean: clean
-	@rm -f $(NAME)
-
-re: fclean all
+rc :
+	make -C $(LIBFT_PATH) fclean && make fclean && make

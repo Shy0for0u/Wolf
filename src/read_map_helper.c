@@ -14,7 +14,9 @@ int 			c_of_words(t_w *w, const char *str) // it is no end
             if (str[x] == '1' || str[x] == '.' || str[x] == '2')
                 elem++;
             if (str[x] == '2')
-            	printf("yo");
+            {
+
+            }
             if (str[x] == '2' && w->player.y == -1)
 			{
 //				w->player.x = (BOX_SIZE * (x)) / 32;
@@ -80,7 +82,6 @@ void 			count_of_string(t_w *w, char *file)
             ft_strdel(&line);
             alert_error(1);
         }
-
         save_map(w, line, w->m.index);
 		w->m.index++;
         ft_strdel(&line);

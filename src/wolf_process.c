@@ -195,6 +195,7 @@ void			process_of_wolf(t_w *w)
 	x = 0;
 	while (x < W)
 	{
+
 		calc_single_ray(w, x, angle);
 		angle = angle + one_angle;
 		x++;
