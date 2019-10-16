@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/wolf_sdl.dir/src/dda.c.o"
   "CMakeFiles/wolf_sdl.dir/src/hooks.c.o"
   "CMakeFiles/wolf_sdl.dir/src/init_ray.c.o"
   "CMakeFiles/wolf_sdl.dir/src/initialization.c.o"

@@ -1,4 +1,4 @@
-#include "../includes/wolf.h"
+#include "includes/wolf.h"
 
 //static double	percent(int start, int end, int current)
 //{

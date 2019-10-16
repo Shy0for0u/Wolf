@@ -36,37 +36,7 @@ string.h
 get_next_line.h
 /Users/dgorold-/CLionProjects/Wolf/libft/includes/get_next_line.h
 
-/Users/dgorold-/CLionProjects/Wolf/src/dda.c
-../includes/wolf.h
-/Users/dgorold-/CLionProjects/Wolf/includes/wolf.h
-
-/Users/dgorold-/CLionProjects/Wolf/src/hooks.c
-../includes/wolf.h
-/Users/dgorold-/CLionProjects/Wolf/includes/wolf.h
-
 /Users/dgorold-/CLionProjects/Wolf/src/init_ray.c
-../includes/wolf.h
-/Users/dgorold-/CLionProjects/Wolf/includes/wolf.h
-
-/Users/dgorold-/CLionProjects/Wolf/src/initialization.c
-../includes/wolf.h
-/Users/dgorold-/CLionProjects/Wolf/includes/wolf.h
-
-/Users/dgorold-/CLionProjects/Wolf/src/main.c
-../includes/wolf.h
-/Users/dgorold-/CLionProjects/Wolf/includes/wolf.h
-
-/Users/dgorold-/CLionProjects/Wolf/src/read_map.c
-../includes/wolf.h
-/Users/dgorold-/CLionProjects/Wolf/includes/wolf.h
-
-/Users/dgorold-/CLionProjects/Wolf/src/read_map_helper.c
-../includes/wolf.h
-/Users/dgorold-/CLionProjects/Wolf/includes/wolf.h
-
-/Users/dgorold-/CLionProjects/Wolf/src/wolf_process.c
-math.h
--
 ../includes/wolf.h
 /Users/dgorold-/CLionProjects/Wolf/includes/wolf.h
 

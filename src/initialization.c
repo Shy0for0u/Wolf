@@ -6,7 +6,7 @@
 /*   By: dgorold- <dgorold-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 23:03:43 by dgorold-          #+#    #+#             */
-/*   Updated: 2019/10/16 00:20:05 by dgorold-         ###   ########.fr       */
+/*   Updated: 2019/10/16 18:42:53 by dgorold-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@ void			player_init(t_w *w)
 	w->player.y = -1;
 	w->player.turn = 5;
 	w->player.speed = 5;
+	w->player.players = 0;
 }
 
-SDL_Surface     *load_surface(t_w *w, char *file)
+SDL_Surface     *load_surface(char *file)
 {
     SDL_Surface *surf;
     SDL_Surface *result;
@@ -34,16 +35,19 @@ SDL_Surface     *load_surface(t_w *w, char *file)
         return (result);
     }
     else
+    {
+        printf("bly\n");
         alert_error(3);
+    }
     return (NULL);
 }
 
 void            init_textures(t_w *w)
 {
-    w->texture->walls[0] = load_surface(w, WALL0);
-    w->texture->walls[1] = load_surface(w, WALL1);
-    w->texture->walls[2] = load_surface(w, WALL2);
-    w->texture->walls[3] = load_surface(w, WALL3);
+    w->texture->walls[0] = load_surface(WALL0);
+    w->texture->walls[1] = load_surface(WALL1);
+    w->texture->walls[2] = load_surface(WALL2);
+    w->texture->walls[3] = load_surface(WALL3);
 }
 
 void            malloc_stuff(t_w *w)

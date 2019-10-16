@@ -6,7 +6,7 @@
 /*   By: dgorold- <dgorold-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/02 20:22:36 by dgorold-          #+#    #+#             */
-/*   Updated: 2019/10/16 00:21:42 by dgorold-         ###   ########.fr       */
+/*   Updated: 2019/10/16 21:34:57 by dgorold-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@
 #include "pthread.h"
 #include "math.h"
 
-# define WALL0      "../walls/1_0.bmp"
-# define WALL1      "../walls/4_0.bmp"
-# define WALL2      "../walls/5_0.bmp"
-# define WALL3      "../walls/3_0.bmp"
+# define WALL0      "./walls/1_0.bmp"
+# define WALL1      "./walls/1_3.bmp"
+# define WALL2      "./walls/3_0.bmp"
+# define WALL3      "./walls/5_0.bmp"
 # define T			"Wolf"
 # define W			1200
 # define H			1000
@@ -71,6 +71,7 @@ typedef struct		s_ray
 
 typedef struct		s_player
 {
+    int             players;
     double          turn;
     double          speed;
 	double 			direction;
@@ -101,7 +102,7 @@ typedef struct		s_w
 int		            check_for_quit(SDL_Event *event, t_sdl *sdl);
 void                keyboard_input(t_w *w);
 void		    	alert_error(int key);
-int 			    read_map(t_w *w, char *file);
+void 			    read_map(t_w *w, char *file);
 int 		    	c_of_words(t_w *w, const char *str);
 int                 create_standard(t_w *w, char *line);
 void 			    count_of_string(t_w *w, char *file);
@@ -113,6 +114,6 @@ void				player_init(t_w *w);
 void                malloc_stuff(t_w *w);
 void			    initialization_(t_w *w);
 void                init_textures(t_w *w);
-SDL_Surface         *load_surface(t_w *w, char *file);
+SDL_Surface         *load_surface(char *file);
 
 #endif

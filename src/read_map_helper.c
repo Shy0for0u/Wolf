@@ -14,16 +14,12 @@ int 			c_of_words(t_w *w, const char *str) // it is no end
             if (str[x] == '1' || str[x] == '.' || str[x] == '2')
                 elem++;
             if (str[x] == '2')
-            {
-
-            }
-            if (str[x] == '2' && w->player.y == -1)
-			{
-//				w->player.x = (BOX_SIZE * (x)) / 32;
-//				w->player.y = (BOX_SIZE  * (w->m.index)) / 32;
-			}
-
+                w->player.players++;
         }
+        else
+            alert_error(1);
+        if (str[x] == '2' && w->player.players > 1)
+            alert_error(4);
         x++;
     }
     return (elem);
@@ -56,18 +52,12 @@ int             create_standard(t_w *w, char *line)
     return (0);
 }
 
-void 			count_of_string(t_w *w, char *file)
+void            write_data_in_map(t_w *w, char *file, int fd)
 {
     char        *line;
-    int         fd;
 
-    w->m.map_h = 0;
     fd = open(file, O_RDONLY);
-    while (get_next_line(fd, &line))
-        w->m.map_h++;
-    close(fd);
-    fd = open(file, O_RDONLY);
-    if ((w->m.map = (char **) malloc(sizeof(char *) * (w->m.map_h + 1))) == NULL)
+    if ((w->m.map = (char **)malloc(sizeof(char *) * (w->m.map_h) + 1)) == NULL)
         alert_error(2);
     w->m.index = 0;
     while (get_next_line(fd, &line))
@@ -87,5 +77,24 @@ void 			count_of_string(t_w *w, char *file)
         ft_strdel(&line);
     }
     w->m.map[w->m.index] = NULL;
+}
+
+void 			count_of_string(t_w *w, char *file)
+{
+    char        *line;
+    int         fd;
+
+    w->m.map_h = 0;
+    fd = open(file, O_RDONLY);
+    while (get_next_line(fd, &line))
+    {
+        w->m.map_h++;
+        ft_strdel(&line);
+    }
     close(fd);
+    fd = open(file, O_RDONLY);
+    write_data_in_map(w, file, fd);
+    close(fd);
+    if (w->m.map_h < 3 || w->m.map_w < 3 || w->player.players != 1)
+        alert_error(1);
 }

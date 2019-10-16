@@ -63,7 +63,6 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/dgorold-/CLionProjects/Wolf/libft/ft_tolower.c" "/Users/dgorold-/CLionProjects/Wolf/cmake-build-debug/CMakeFiles/wolf_sdl.dir/libft/ft_tolower.c.o"
   "/Users/dgorold-/CLionProjects/Wolf/libft/ft_toupper.c" "/Users/dgorold-/CLionProjects/Wolf/cmake-build-debug/CMakeFiles/wolf_sdl.dir/libft/ft_toupper.c.o"
   "/Users/dgorold-/CLionProjects/Wolf/libft/get_next_line.c" "/Users/dgorold-/CLionProjects/Wolf/cmake-build-debug/CMakeFiles/wolf_sdl.dir/libft/get_next_line.c.o"
-  "/Users/dgorold-/CLionProjects/Wolf/src/dda.c" "/Users/dgorold-/CLionProjects/Wolf/cmake-build-debug/CMakeFiles/wolf_sdl.dir/src/dda.c.o"
   "/Users/dgorold-/CLionProjects/Wolf/src/hooks.c" "/Users/dgorold-/CLionProjects/Wolf/cmake-build-debug/CMakeFiles/wolf_sdl.dir/src/hooks.c.o"
   "/Users/dgorold-/CLionProjects/Wolf/src/init_ray.c" "/Users/dgorold-/CLionProjects/Wolf/cmake-build-debug/CMakeFiles/wolf_sdl.dir/src/init_ray.c.o"
   "/Users/dgorold-/CLionProjects/Wolf/src/initialization.c" "/Users/dgorold-/CLionProjects/Wolf/cmake-build-debug/CMakeFiles/wolf_sdl.dir/src/initialization.c.o"

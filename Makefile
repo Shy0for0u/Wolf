@@ -6,7 +6,7 @@
 #    By: dgorold- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/22 10:09:18 by dgorold-          #+#    #+#              #
-#    Updated: 2019/10/16 00:23:43 by dgorold-         ###   ########.fr        #
+#    Updated: 2019/10/16 18:52:41 by dgorold-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 NAME = Wolf
 INCLUDES = 	-I ./libft/include \
-			-I ./sdl2/SDL2.framework/Headers \
+			-I ./sdl2/SDL2.framework/Headers/ \
 			-I ./include
 
 SRC_PATH =	src
@@ -38,7 +38,7 @@ LIBFT = -L $(LIBFT_PATH) -lft
 
 LIBS = 	-lm \
 		-lpthread \
-		-F ./sdl2 -framework SDL2
+		-F ./sdl2/ -framework SDL2
 
 YELLOW = \033[1;33m
 PURPLE = \033[0;35m

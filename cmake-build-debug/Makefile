@@ -1716,33 +1716,6 @@ libft/get_next_line.c.s:
 	$(MAKE) -f CMakeFiles/wolf_sdl.dir/build.make CMakeFiles/wolf_sdl.dir/libft/get_next_line.c.s
 .PHONY : libft/get_next_line.c.s
 
-src/dda.o: src/dda.c.o
-
-.PHONY : src/dda.o
-
-# target to build an object file
-src/dda.c.o:
-	$(MAKE) -f CMakeFiles/wolf_sdl.dir/build.make CMakeFiles/wolf_sdl.dir/src/dda.c.o
-.PHONY : src/dda.c.o
-
-src/dda.i: src/dda.c.i
-
-.PHONY : src/dda.i
-
-# target to preprocess a source file
-src/dda.c.i:
-	$(MAKE) -f CMakeFiles/wolf_sdl.dir/build.make CMakeFiles/wolf_sdl.dir/src/dda.c.i
-.PHONY : src/dda.c.i
-
-src/dda.s: src/dda.c.s
-
-.PHONY : src/dda.s
-
-# target to generate assembly for a file
-src/dda.c.s:
-	$(MAKE) -f CMakeFiles/wolf_sdl.dir/build.make CMakeFiles/wolf_sdl.dir/src/dda.c.s
-.PHONY : src/dda.c.s
-
 src/hooks.o: src/hooks.c.o
 
 .PHONY : src/hooks.o
@@ -2118,9 +2091,6 @@ help:
 	@echo "... libft/get_next_line.o"
 	@echo "... libft/get_next_line.i"
 	@echo "... libft/get_next_line.s"
-	@echo "... src/dda.o"
-	@echo "... src/dda.i"
-	@echo "... src/dda.s"
 	@echo "... src/hooks.o"
 	@echo "... src/hooks.i"
 	@echo "... src/hooks.s"

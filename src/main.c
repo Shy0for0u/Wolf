@@ -9,7 +9,7 @@ void			alert_error(int key)
 	}
 	if (key == 1)
 	{
-		write(2, "non valid map_w\n", 15);
+		write(2, "non valid map\n", 14);
 		exit(0);
 	}
 	if (key == 2)
@@ -20,6 +20,11 @@ void			alert_error(int key)
 	if (key == 3)
     {
         write(2, "SDL drop\n", 9);
+        exit(0);
+    }
+    if (key == 4)
+    {
+        write(2, "You need one player\n", 16);
         exit(0);
     }
 }

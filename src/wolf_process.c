@@ -39,49 +39,6 @@ void      pixel_to_img(SDL_Surface *screen, int y, int x, t_color c)
     pixels[offset + 2] = c.r;
 }
 
-//void			print_squire(t_w *w, int y, int x)
-//{
-//	t_2d TL;
-//	t_2d TR;
-//	t_2d BL;
-//	t_2d BR;
-//
-//	TL.color= 0xff0000;
-//	TR.color= 0xff0000;
-//	BL.color= 0xff0000;
-//	BR.color= 0xff0000;
-//	TL.y = y * 64;
-//	TL.x = x * 64;
-//	TR.y = y * 64;
-//	TR.x = x * 64 + 64;
-//	BL.y = y * 64 + 64;
-//	BL.x = x * 64;
-//	BR.y = y * 64 + 64;
-//	BR.x = x * 64 + 64;
-//	dda(w, TL, TR);
-//	dda(w, TL, BL);
-//	dda(w, TR, BR);
-//	dda(w, BL, BR);
-//}
-
-//void			print_map(t_w *w)w
-//{
-//	int y = 0;
-//	while (y < w->m.map_h)
-//	{
-//		int x = 0;
-//		while (x < w->m.map_w)
-//		{
-//			if (w->array[y][x] == 1)
-//				print_squire(w, y, x);
-//			if (w->array[y][x] == 2)
-//				pixel_to_img(w, y, x);
-//			x++;
-//		}
-//		y++;
-//	}
-//}
-
 int 			is_wall(t_w *w, int y, int x)
 {
 	if (x < 0 || y < 0)
@@ -93,7 +50,7 @@ int 			is_wall(t_w *w, int y, int x)
 	return (0);
 }
 
-void		draw_column(t_w *w, t_ray *ray, int x, double angle)
+void		draw_column(t_w *w, t_ray *ray, int x)
 {
     int   min;
     int    max;
@@ -151,7 +108,7 @@ void        calc_wall_data(t_w *w, t_ray *result, double angle)
     else
     {
         result->offset = (int)(result->start.y) % TEXT_SIZE;
-        result->texture = w->texture->walls[cos(angle) < 0 ? 2 : 3];
+        result->texture = w->texture->walls[(cos(angle) < 0 ? 2 : 3)];
     }
 }
 
@@ -177,10 +134,8 @@ void		calc_single_ray(t_w *w, int x, double angle)
 	t_ray	*ray;
 
 	ray = get_ray(w, angle);
-
 	ray->height = TEXT_SIZE / ray->dist * w->dist_to_projection_plane;
-
-	draw_column(w, ray, x, angle);
+	draw_column(w, ray, x);
 	free(ray);
 }
 
@@ -190,12 +145,11 @@ void			process_of_wolf(t_w *w)
 	double	one_angle;
     int     x;
 
-	angle = (w->player.direction - (double)(60 * 0.5));
+	angle = (w->player.direction - (60.0 * 0.5));
 	one_angle = (60.0 / W);
 	x = 0;
 	while (x < W)
 	{
-
 		calc_single_ray(w, x, angle);
 		angle = angle + one_angle;
 		x++;
