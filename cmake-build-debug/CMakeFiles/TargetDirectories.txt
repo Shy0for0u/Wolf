@@ -1,3 +1,3 @@
-C:/Users/pavtr/.CLion2019.2/wolf_sdl/cmake-build-debug/CMakeFiles/wolf_sdl.dir
-C:/Users/pavtr/.CLion2019.2/wolf_sdl/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/pavtr/.CLion2019.2/wolf_sdl/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/dgorold-/CLionProjects/Wolf/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/dgorold-/CLionProjects/Wolf/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/dgorold-/CLionProjects/Wolf/cmake-build-debug/CMakeFiles/wolf_sdl.dir
