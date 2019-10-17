@@ -6,7 +6,7 @@
 /*   By: dgorold- <dgorold-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 20:39:15 by dgorold-          #+#    #+#             */
-/*   Updated: 2019/10/17 21:57:40 by dgorold-         ###   ########.fr       */
+/*   Updated: 2019/10/18 00:38:55 by dgorold-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ static int		c_of_words(t_w *w, const char *str)
 				w->player.players++;
 		}
 		else
-			alert_error(w, 1);
+			alert_error(1);
 		if (str[x] == '2' && w->player.players > 1)
-			alert_error(w, 4);
+			alert_error(4);
 		x++;
 	}
 	return (elem);
@@ -43,7 +43,7 @@ static void		save_map(t_w *w, char *line, int y)
 	{
 		while (y--)
 			ft_strdel(&w->m.map[y]);
-		alert_error(w, 2);
+		alert_error(2);
 	}
 	w->m.map[y] = ft_strcpy(w->m.map[y], line);
 }
@@ -55,7 +55,7 @@ static int		create_standard(t_w *w, char *line)
 		if ((w->m.map_w = c_of_words(w, line)) == 0)
 		{
 			ft_strdel(&line);
-			alert_error(w, 1);
+			alert_error(1);
 		}
 		save_map(w, line, w->m.index);
 		w->m.index++;
@@ -70,7 +70,7 @@ void			write_data_in_map(t_w *w, char *file, int fd)
 
 	fd = open(file, O_RDONLY);
 	if ((w->m.map = (char **)malloc(sizeof(char *) * (w->m.map_h) + 1)) == NULL)
-		alert_error(w, 2);
+		alert_error(2);
 	w->m.index = 0;
 	while (get_next_line(fd, &line))
 	{
@@ -82,7 +82,7 @@ void			write_data_in_map(t_w *w, char *file, int fd)
 		if (w->m.map_w != c_of_words(w, line))
 		{
 			ft_strdel(&line);
-			alert_error(w, 1);
+			alert_error(1);
 		}
 		save_map(w, line, w->m.index);
 		w->m.index++;
@@ -108,5 +108,5 @@ void			count_of_string(t_w *w, char *file)
 	write_data_in_map(w, file, fd);
 	close(fd);
 	if (w->m.map_h < 3 || w->m.map_w < 3 || w->player.players != 1)
-		alert_error(w, 1);
+		alert_error(1);
 }

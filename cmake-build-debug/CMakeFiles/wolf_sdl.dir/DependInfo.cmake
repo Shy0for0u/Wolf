@@ -63,7 +63,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/dgorold-/CLionProjects/Wolf/libft/ft_tolower.c" "/Users/dgorold-/CLionProjects/Wolf/cmake-build-debug/CMakeFiles/wolf_sdl.dir/libft/ft_tolower.c.o"
   "/Users/dgorold-/CLionProjects/Wolf/libft/ft_toupper.c" "/Users/dgorold-/CLionProjects/Wolf/cmake-build-debug/CMakeFiles/wolf_sdl.dir/libft/ft_toupper.c.o"
   "/Users/dgorold-/CLionProjects/Wolf/libft/get_next_line.c" "/Users/dgorold-/CLionProjects/Wolf/cmake-build-debug/CMakeFiles/wolf_sdl.dir/libft/get_next_line.c.o"
-  "/Users/dgorold-/CLionProjects/Wolf/src/drowing_window.c" "/Users/dgorold-/CLionProjects/Wolf/cmake-build-debug/CMakeFiles/wolf_sdl.dir/src/drowing_window.c.o"
+  "/Users/dgorold-/CLionProjects/Wolf/src/drawing_window.c" "/Users/dgorold-/CLionProjects/Wolf/cmake-build-debug/CMakeFiles/wolf_sdl.dir/src/drawing_window.c.o"
   "/Users/dgorold-/CLionProjects/Wolf/src/free_memory.c" "/Users/dgorold-/CLionProjects/Wolf/cmake-build-debug/CMakeFiles/wolf_sdl.dir/src/free_memory.c.o"
   "/Users/dgorold-/CLionProjects/Wolf/src/ft_for_walls.c" "/Users/dgorold-/CLionProjects/Wolf/cmake-build-debug/CMakeFiles/wolf_sdl.dir/src/ft_for_walls.c.o"
   "/Users/dgorold-/CLionProjects/Wolf/src/hooks.c" "/Users/dgorold-/CLionProjects/Wolf/cmake-build-debug/CMakeFiles/wolf_sdl.dir/src/hooks.c.o"

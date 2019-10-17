@@ -225,11 +225,11 @@ CMakeFiles/wolf_sdl.dir/libft/get_next_line.c.o
  /Users/dgorold-/CLionProjects/Wolf/libft/./includes/get_next_line.h
  /Users/dgorold-/CLionProjects/Wolf/libft/./includes/libft.h
  /Users/dgorold-/CLionProjects/Wolf/libft/get_next_line.c
-CMakeFiles/wolf_sdl.dir/src/drowing_window.c.o
+CMakeFiles/wolf_sdl.dir/src/drawing_window.c.o
  /Users/dgorold-/CLionProjects/Wolf/includes/wolf.h
  /Users/dgorold-/CLionProjects/Wolf/libft/includes/get_next_line.h
  /Users/dgorold-/CLionProjects/Wolf/libft/includes/libft.h
- /Users/dgorold-/CLionProjects/Wolf/src/drowing_window.c
+ /Users/dgorold-/CLionProjects/Wolf/src/drawing_window.c
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_assert.h
  /Users/dgorold-/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL_atomic.h

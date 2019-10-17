@@ -263,7 +263,7 @@
 		<Unit filename="/Users/dgorold-/CLionProjects/Wolf/libft/get_next_line.c">
 			<Option target="wolf_sdl"/>
 		</Unit>
-		<Unit filename="/Users/dgorold-/CLionProjects/Wolf/src/drowing_window.c">
+		<Unit filename="/Users/dgorold-/CLionProjects/Wolf/src/drawing_window.c">
 			<Option target="wolf_sdl"/>
 		</Unit>
 		<Unit filename="/Users/dgorold-/CLionProjects/Wolf/src/free_memory.c">

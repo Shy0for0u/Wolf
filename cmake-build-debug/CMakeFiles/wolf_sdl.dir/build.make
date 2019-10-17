@@ -57,18 +57,18 @@ include CMakeFiles/wolf_sdl.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/wolf_sdl.dir/flags.make
 
-CMakeFiles/wolf_sdl.dir/src/drowing_window.c.o: CMakeFiles/wolf_sdl.dir/flags.make
-CMakeFiles/wolf_sdl.dir/src/drowing_window.c.o: ../src/drowing_window.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgorold-/CLionProjects/Wolf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/wolf_sdl.dir/src/drowing_window.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wolf_sdl.dir/src/drowing_window.c.o   -c /Users/dgorold-/CLionProjects/Wolf/src/drowing_window.c
+CMakeFiles/wolf_sdl.dir/src/drawing_window.c.o: CMakeFiles/wolf_sdl.dir/flags.make
+CMakeFiles/wolf_sdl.dir/src/drawing_window.c.o: ../src/drawing_window.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgorold-/CLionProjects/Wolf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/wolf_sdl.dir/src/drawing_window.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wolf_sdl.dir/src/drawing_window.c.o   -c /Users/dgorold-/CLionProjects/Wolf/src/drawing_window.c
 
-CMakeFiles/wolf_sdl.dir/src/drowing_window.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/wolf_sdl.dir/src/drowing_window.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgorold-/CLionProjects/Wolf/src/drowing_window.c > CMakeFiles/wolf_sdl.dir/src/drowing_window.c.i
+CMakeFiles/wolf_sdl.dir/src/drawing_window.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/wolf_sdl.dir/src/drawing_window.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgorold-/CLionProjects/Wolf/src/drawing_window.c > CMakeFiles/wolf_sdl.dir/src/drawing_window.c.i
 
-CMakeFiles/wolf_sdl.dir/src/drowing_window.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/wolf_sdl.dir/src/drowing_window.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgorold-/CLionProjects/Wolf/src/drowing_window.c -o CMakeFiles/wolf_sdl.dir/src/drowing_window.c.s
+CMakeFiles/wolf_sdl.dir/src/drawing_window.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/wolf_sdl.dir/src/drawing_window.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgorold-/CLionProjects/Wolf/src/drawing_window.c -o CMakeFiles/wolf_sdl.dir/src/drawing_window.c.s
 
 CMakeFiles/wolf_sdl.dir/src/free_memory.c.o: CMakeFiles/wolf_sdl.dir/flags.make
 CMakeFiles/wolf_sdl.dir/src/free_memory.c.o: ../src/free_memory.c
@@ -956,7 +956,7 @@ CMakeFiles/wolf_sdl.dir/libft/get_next_line.c.s: cmake_force
 
 # Object files for target wolf_sdl
 wolf_sdl_OBJECTS = \
-"CMakeFiles/wolf_sdl.dir/src/drowing_window.c.o" \
+"CMakeFiles/wolf_sdl.dir/src/drawing_window.c.o" \
 "CMakeFiles/wolf_sdl.dir/src/free_memory.c.o" \
 "CMakeFiles/wolf_sdl.dir/src/ft_for_walls.c.o" \
 "CMakeFiles/wolf_sdl.dir/src/hooks.c.o" \
@@ -1029,7 +1029,7 @@ wolf_sdl_OBJECTS = \
 # External object files for target wolf_sdl
 wolf_sdl_EXTERNAL_OBJECTS =
 
-wolf_sdl: CMakeFiles/wolf_sdl.dir/src/drowing_window.c.o
+wolf_sdl: CMakeFiles/wolf_sdl.dir/src/drawing_window.c.o
 wolf_sdl: CMakeFiles/wolf_sdl.dir/src/free_memory.c.o
 wolf_sdl: CMakeFiles/wolf_sdl.dir/src/ft_for_walls.c.o
 wolf_sdl: CMakeFiles/wolf_sdl.dir/src/hooks.c.o

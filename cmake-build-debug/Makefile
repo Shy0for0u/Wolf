@@ -1716,32 +1716,32 @@ libft/get_next_line.c.s:
 	$(MAKE) -f CMakeFiles/wolf_sdl.dir/build.make CMakeFiles/wolf_sdl.dir/libft/get_next_line.c.s
 .PHONY : libft/get_next_line.c.s
 
-src/drowing_window.o: src/drowing_window.c.o
+src/drawing_window.o: src/drawing_window.c.o
 
-.PHONY : src/drowing_window.o
+.PHONY : src/drawing_window.o
 
 # target to build an object file
-src/drowing_window.c.o:
-	$(MAKE) -f CMakeFiles/wolf_sdl.dir/build.make CMakeFiles/wolf_sdl.dir/src/drowing_window.c.o
-.PHONY : src/drowing_window.c.o
+src/drawing_window.c.o:
+	$(MAKE) -f CMakeFiles/wolf_sdl.dir/build.make CMakeFiles/wolf_sdl.dir/src/drawing_window.c.o
+.PHONY : src/drawing_window.c.o
 
-src/drowing_window.i: src/drowing_window.c.i
+src/drawing_window.i: src/drawing_window.c.i
 
-.PHONY : src/drowing_window.i
+.PHONY : src/drawing_window.i
 
 # target to preprocess a source file
-src/drowing_window.c.i:
-	$(MAKE) -f CMakeFiles/wolf_sdl.dir/build.make CMakeFiles/wolf_sdl.dir/src/drowing_window.c.i
-.PHONY : src/drowing_window.c.i
+src/drawing_window.c.i:
+	$(MAKE) -f CMakeFiles/wolf_sdl.dir/build.make CMakeFiles/wolf_sdl.dir/src/drawing_window.c.i
+.PHONY : src/drawing_window.c.i
 
-src/drowing_window.s: src/drowing_window.c.s
+src/drawing_window.s: src/drawing_window.c.s
 
-.PHONY : src/drowing_window.s
+.PHONY : src/drawing_window.s
 
 # target to generate assembly for a file
-src/drowing_window.c.s:
-	$(MAKE) -f CMakeFiles/wolf_sdl.dir/build.make CMakeFiles/wolf_sdl.dir/src/drowing_window.c.s
-.PHONY : src/drowing_window.c.s
+src/drawing_window.c.s:
+	$(MAKE) -f CMakeFiles/wolf_sdl.dir/build.make CMakeFiles/wolf_sdl.dir/src/drawing_window.c.s
+.PHONY : src/drawing_window.c.s
 
 src/free_memory.o: src/free_memory.c.o
 
@@ -2172,9 +2172,9 @@ help:
 	@echo "... libft/get_next_line.o"
 	@echo "... libft/get_next_line.i"
 	@echo "... libft/get_next_line.s"
-	@echo "... src/drowing_window.o"
-	@echo "... src/drowing_window.i"
-	@echo "... src/drowing_window.s"
+	@echo "... src/drawing_window.o"
+	@echo "... src/drawing_window.i"
+	@echo "... src/drawing_window.s"
 	@echo "... src/free_memory.o"
 	@echo "... src/free_memory.i"
 	@echo "... src/free_memory.s"

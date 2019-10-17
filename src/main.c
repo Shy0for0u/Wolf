@@ -6,13 +6,13 @@
 /*   By: dgorold- <dgorold-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 19:00:08 by dgorold-          #+#    #+#             */
-/*   Updated: 2019/10/17 22:23:18 by dgorold-         ###   ########.fr       */
+/*   Updated: 2019/10/18 00:38:05 by dgorold-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/wolf.h"
 
-void			alert_error(t_w *w, int key)
+void			alert_error(int key)
 {
 	if (key == 0)
 		write(2, "bad fd or file\n", 15);
@@ -34,7 +34,7 @@ int				main(int argc, char *argv[])
 	t_w			*wolf;
 
 	if ((wolf = (t_w*)malloc(sizeof(t_w))) == NULL)
-		alert_error(wolf, 2);
+		alert_error(2);
 	if (argc == 2)
 	{
 		player_init(wolf);
@@ -52,6 +52,6 @@ int				main(int argc, char *argv[])
 		}
 	}
 	else
-		alert_error(wolf, 5);
+		alert_error(5);
 	return (0);
 }

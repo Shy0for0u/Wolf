@@ -6,13 +6,13 @@
 /*   By: dgorold- <dgorold-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 23:04:04 by dgorold-          #+#    #+#             */
-/*   Updated: 2019/10/17 22:17:12 by dgorold-         ###   ########.fr       */
+/*   Updated: 2019/10/18 00:35:17 by dgorold-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/wolf.h"
 
-void			map_around(t_w *w)
+static void		map_around(t_w *w)
 {
 	int			x;
 	int			y;
@@ -31,7 +31,7 @@ void			map_around(t_w *w)
 	}
 }
 
-void			w_data_in_map(t_w *w)
+static void		w_data_in_map(t_w *w)
 {
 	int			y;
 	int			x;
@@ -41,7 +41,7 @@ void			w_data_in_map(t_w *w)
 	while (w->m.map[++y])
 	{
 		if ((array_c = ft_strsplit(w->m.map[y], ' ')) == NULL)
-			alert_error(w, 2);
+			alert_error(2);
 		x = -1;
 		while (array_c[++x])
 		{
@@ -60,13 +60,13 @@ void			w_data_in_map(t_w *w)
 	}
 }
 
-void			get_memory_for_map(t_w *w)
+static void		get_memory_for_map(t_w *w)
 {
 	int			i;
 
 	i = 0;
 	if ((w->array = (int **)malloc(sizeof(int *) * (w->m.map_h + 2))) == NULL)
-		alert_error(w, 2);
+		alert_error(2);
 	while (i < (w->m.map_h + 2))
 	{
 		if ((w->array[i] = (int *)malloc(sizeof(int) *
@@ -74,10 +74,11 @@ void			get_memory_for_map(t_w *w)
 		{
 			while (--i)
 				ft_memdel((void *)&w->array[i]);
-			alert_error(w, 2);
+			alert_error(2);
 		}
 		i++;
 	}
+	w->array[w->m.map_h + 2] = 0;
 }
 
 void			read_map(t_w *w, char *file)
@@ -87,7 +88,7 @@ void			read_map(t_w *w, char *file)
 
 	fd = open(file, O_RDONLY);
 	if (read(fd, buff, 0) < 0 || fd < 0)
-		alert_error(w, 0);
+		alert_error(0);
 	count_of_string(w, file);
 	get_memory_for_map(w);
 	map_around(w);

@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/wolf_sdl.dir/src/drowing_window.c.o"
+  "CMakeFiles/wolf_sdl.dir/src/drawing_window.c.o"
   "CMakeFiles/wolf_sdl.dir/src/free_memory.c.o"
   "CMakeFiles/wolf_sdl.dir/src/ft_for_walls.c.o"
   "CMakeFiles/wolf_sdl.dir/src/hooks.c.o"
