@@ -63,13 +63,16 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/dgorold-/CLionProjects/Wolf/libft/ft_tolower.c" "/Users/dgorold-/CLionProjects/Wolf/cmake-build-debug/CMakeFiles/wolf_sdl.dir/libft/ft_tolower.c.o"
   "/Users/dgorold-/CLionProjects/Wolf/libft/ft_toupper.c" "/Users/dgorold-/CLionProjects/Wolf/cmake-build-debug/CMakeFiles/wolf_sdl.dir/libft/ft_toupper.c.o"
   "/Users/dgorold-/CLionProjects/Wolf/libft/get_next_line.c" "/Users/dgorold-/CLionProjects/Wolf/cmake-build-debug/CMakeFiles/wolf_sdl.dir/libft/get_next_line.c.o"
+  "/Users/dgorold-/CLionProjects/Wolf/src/drowing_window.c" "/Users/dgorold-/CLionProjects/Wolf/cmake-build-debug/CMakeFiles/wolf_sdl.dir/src/drowing_window.c.o"
+  "/Users/dgorold-/CLionProjects/Wolf/src/free_memory.c" "/Users/dgorold-/CLionProjects/Wolf/cmake-build-debug/CMakeFiles/wolf_sdl.dir/src/free_memory.c.o"
+  "/Users/dgorold-/CLionProjects/Wolf/src/ft_for_walls.c" "/Users/dgorold-/CLionProjects/Wolf/cmake-build-debug/CMakeFiles/wolf_sdl.dir/src/ft_for_walls.c.o"
   "/Users/dgorold-/CLionProjects/Wolf/src/hooks.c" "/Users/dgorold-/CLionProjects/Wolf/cmake-build-debug/CMakeFiles/wolf_sdl.dir/src/hooks.c.o"
   "/Users/dgorold-/CLionProjects/Wolf/src/init_ray.c" "/Users/dgorold-/CLionProjects/Wolf/cmake-build-debug/CMakeFiles/wolf_sdl.dir/src/init_ray.c.o"
   "/Users/dgorold-/CLionProjects/Wolf/src/initialization.c" "/Users/dgorold-/CLionProjects/Wolf/cmake-build-debug/CMakeFiles/wolf_sdl.dir/src/initialization.c.o"
   "/Users/dgorold-/CLionProjects/Wolf/src/main.c" "/Users/dgorold-/CLionProjects/Wolf/cmake-build-debug/CMakeFiles/wolf_sdl.dir/src/main.c.o"
+  "/Users/dgorold-/CLionProjects/Wolf/src/raycasting.c" "/Users/dgorold-/CLionProjects/Wolf/cmake-build-debug/CMakeFiles/wolf_sdl.dir/src/raycasting.c.o"
   "/Users/dgorold-/CLionProjects/Wolf/src/read_map.c" "/Users/dgorold-/CLionProjects/Wolf/cmake-build-debug/CMakeFiles/wolf_sdl.dir/src/read_map.c.o"
   "/Users/dgorold-/CLionProjects/Wolf/src/read_map_helper.c" "/Users/dgorold-/CLionProjects/Wolf/cmake-build-debug/CMakeFiles/wolf_sdl.dir/src/read_map_helper.c.o"
-  "/Users/dgorold-/CLionProjects/Wolf/src/wolf_process.c" "/Users/dgorold-/CLionProjects/Wolf/cmake-build-debug/CMakeFiles/wolf_sdl.dir/src/wolf_process.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

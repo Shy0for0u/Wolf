@@ -1716,6 +1716,87 @@ libft/get_next_line.c.s:
 	$(MAKE) -f CMakeFiles/wolf_sdl.dir/build.make CMakeFiles/wolf_sdl.dir/libft/get_next_line.c.s
 .PHONY : libft/get_next_line.c.s
 
+src/drowing_window.o: src/drowing_window.c.o
+
+.PHONY : src/drowing_window.o
+
+# target to build an object file
+src/drowing_window.c.o:
+	$(MAKE) -f CMakeFiles/wolf_sdl.dir/build.make CMakeFiles/wolf_sdl.dir/src/drowing_window.c.o
+.PHONY : src/drowing_window.c.o
+
+src/drowing_window.i: src/drowing_window.c.i
+
+.PHONY : src/drowing_window.i
+
+# target to preprocess a source file
+src/drowing_window.c.i:
+	$(MAKE) -f CMakeFiles/wolf_sdl.dir/build.make CMakeFiles/wolf_sdl.dir/src/drowing_window.c.i
+.PHONY : src/drowing_window.c.i
+
+src/drowing_window.s: src/drowing_window.c.s
+
+.PHONY : src/drowing_window.s
+
+# target to generate assembly for a file
+src/drowing_window.c.s:
+	$(MAKE) -f CMakeFiles/wolf_sdl.dir/build.make CMakeFiles/wolf_sdl.dir/src/drowing_window.c.s
+.PHONY : src/drowing_window.c.s
+
+src/free_memory.o: src/free_memory.c.o
+
+.PHONY : src/free_memory.o
+
+# target to build an object file
+src/free_memory.c.o:
+	$(MAKE) -f CMakeFiles/wolf_sdl.dir/build.make CMakeFiles/wolf_sdl.dir/src/free_memory.c.o
+.PHONY : src/free_memory.c.o
+
+src/free_memory.i: src/free_memory.c.i
+
+.PHONY : src/free_memory.i
+
+# target to preprocess a source file
+src/free_memory.c.i:
+	$(MAKE) -f CMakeFiles/wolf_sdl.dir/build.make CMakeFiles/wolf_sdl.dir/src/free_memory.c.i
+.PHONY : src/free_memory.c.i
+
+src/free_memory.s: src/free_memory.c.s
+
+.PHONY : src/free_memory.s
+
+# target to generate assembly for a file
+src/free_memory.c.s:
+	$(MAKE) -f CMakeFiles/wolf_sdl.dir/build.make CMakeFiles/wolf_sdl.dir/src/free_memory.c.s
+.PHONY : src/free_memory.c.s
+
+src/ft_for_walls.o: src/ft_for_walls.c.o
+
+.PHONY : src/ft_for_walls.o
+
+# target to build an object file
+src/ft_for_walls.c.o:
+	$(MAKE) -f CMakeFiles/wolf_sdl.dir/build.make CMakeFiles/wolf_sdl.dir/src/ft_for_walls.c.o
+.PHONY : src/ft_for_walls.c.o
+
+src/ft_for_walls.i: src/ft_for_walls.c.i
+
+.PHONY : src/ft_for_walls.i
+
+# target to preprocess a source file
+src/ft_for_walls.c.i:
+	$(MAKE) -f CMakeFiles/wolf_sdl.dir/build.make CMakeFiles/wolf_sdl.dir/src/ft_for_walls.c.i
+.PHONY : src/ft_for_walls.c.i
+
+src/ft_for_walls.s: src/ft_for_walls.c.s
+
+.PHONY : src/ft_for_walls.s
+
+# target to generate assembly for a file
+src/ft_for_walls.c.s:
+	$(MAKE) -f CMakeFiles/wolf_sdl.dir/build.make CMakeFiles/wolf_sdl.dir/src/ft_for_walls.c.s
+.PHONY : src/ft_for_walls.c.s
+
 src/hooks.o: src/hooks.c.o
 
 .PHONY : src/hooks.o
@@ -1824,6 +1905,33 @@ src/main.c.s:
 	$(MAKE) -f CMakeFiles/wolf_sdl.dir/build.make CMakeFiles/wolf_sdl.dir/src/main.c.s
 .PHONY : src/main.c.s
 
+src/raycasting.o: src/raycasting.c.o
+
+.PHONY : src/raycasting.o
+
+# target to build an object file
+src/raycasting.c.o:
+	$(MAKE) -f CMakeFiles/wolf_sdl.dir/build.make CMakeFiles/wolf_sdl.dir/src/raycasting.c.o
+.PHONY : src/raycasting.c.o
+
+src/raycasting.i: src/raycasting.c.i
+
+.PHONY : src/raycasting.i
+
+# target to preprocess a source file
+src/raycasting.c.i:
+	$(MAKE) -f CMakeFiles/wolf_sdl.dir/build.make CMakeFiles/wolf_sdl.dir/src/raycasting.c.i
+.PHONY : src/raycasting.c.i
+
+src/raycasting.s: src/raycasting.c.s
+
+.PHONY : src/raycasting.s
+
+# target to generate assembly for a file
+src/raycasting.c.s:
+	$(MAKE) -f CMakeFiles/wolf_sdl.dir/build.make CMakeFiles/wolf_sdl.dir/src/raycasting.c.s
+.PHONY : src/raycasting.c.s
+
 src/read_map.o: src/read_map.c.o
 
 .PHONY : src/read_map.o
@@ -1877,33 +1985,6 @@ src/read_map_helper.s: src/read_map_helper.c.s
 src/read_map_helper.c.s:
 	$(MAKE) -f CMakeFiles/wolf_sdl.dir/build.make CMakeFiles/wolf_sdl.dir/src/read_map_helper.c.s
 .PHONY : src/read_map_helper.c.s
-
-src/wolf_process.o: src/wolf_process.c.o
-
-.PHONY : src/wolf_process.o
-
-# target to build an object file
-src/wolf_process.c.o:
-	$(MAKE) -f CMakeFiles/wolf_sdl.dir/build.make CMakeFiles/wolf_sdl.dir/src/wolf_process.c.o
-.PHONY : src/wolf_process.c.o
-
-src/wolf_process.i: src/wolf_process.c.i
-
-.PHONY : src/wolf_process.i
-
-# target to preprocess a source file
-src/wolf_process.c.i:
-	$(MAKE) -f CMakeFiles/wolf_sdl.dir/build.make CMakeFiles/wolf_sdl.dir/src/wolf_process.c.i
-.PHONY : src/wolf_process.c.i
-
-src/wolf_process.s: src/wolf_process.c.s
-
-.PHONY : src/wolf_process.s
-
-# target to generate assembly for a file
-src/wolf_process.c.s:
-	$(MAKE) -f CMakeFiles/wolf_sdl.dir/build.make CMakeFiles/wolf_sdl.dir/src/wolf_process.c.s
-.PHONY : src/wolf_process.c.s
 
 # Help Target
 help:
@@ -2091,6 +2172,15 @@ help:
 	@echo "... libft/get_next_line.o"
 	@echo "... libft/get_next_line.i"
 	@echo "... libft/get_next_line.s"
+	@echo "... src/drowing_window.o"
+	@echo "... src/drowing_window.i"
+	@echo "... src/drowing_window.s"
+	@echo "... src/free_memory.o"
+	@echo "... src/free_memory.i"
+	@echo "... src/free_memory.s"
+	@echo "... src/ft_for_walls.o"
+	@echo "... src/ft_for_walls.i"
+	@echo "... src/ft_for_walls.s"
 	@echo "... src/hooks.o"
 	@echo "... src/hooks.i"
 	@echo "... src/hooks.s"
@@ -2103,15 +2193,15 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/raycasting.o"
+	@echo "... src/raycasting.i"
+	@echo "... src/raycasting.s"
 	@echo "... src/read_map.o"
 	@echo "... src/read_map.i"
 	@echo "... src/read_map.s"
 	@echo "... src/read_map_helper.o"
 	@echo "... src/read_map_helper.i"
 	@echo "... src/read_map_helper.s"
-	@echo "... src/wolf_process.o"
-	@echo "... src/wolf_process.i"
-	@echo "... src/wolf_process.s"
 .PHONY : help
 
 

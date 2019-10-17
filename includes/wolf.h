@@ -6,7 +6,7 @@
 /*   By: dgorold- <dgorold-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/02 20:22:36 by dgorold-          #+#    #+#             */
-/*   Updated: 2019/10/16 21:34:57 by dgorold-         ###   ########.fr       */
+/*   Updated: 2019/10/17 20:52:29 by dgorold-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 
 # define WALL0      "./walls/1_0.bmp"
 # define WALL1      "./walls/1_3.bmp"
-# define WALL2      "./walls/3_0.bmp"
-# define WALL3      "./walls/5_0.bmp"
+# define WALL2      "./walls/3_3.bmp"
+# define WALL3      "./walls/3_0.bmp"
 # define T			"Wolf"
 # define W			1200
 # define H			1000
@@ -31,6 +31,14 @@
 # define M_PI_180	0.017453292519943295
 # define HORIZ_TYPE 1
 # define VERT_TYPE  0
+# define SDL_ATR	T, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, W, H, 0
+
+typedef struct      s_iter
+{
+    int             max;
+    int             min;
+    int             y;
+}                   t_iter;
 
 typedef struct		s_point
 {
@@ -99,12 +107,12 @@ typedef struct		s_w
 	int 			**array;
 }					t_w;
 
-int		            check_for_quit(SDL_Event *event, t_sdl *sdl);
+int		            check_for_quit(SDL_Event *event, t_w *w);
 void                keyboard_input(t_w *w);
-void		    	alert_error(int key);
+void		    	alert_error(t_w *w, int key);
 void 			    read_map(t_w *w, char *file);
-int 		    	c_of_words(t_w *w, const char *str);
-int                 create_standard(t_w *w, char *line);
+//int 		    	c_of_words(t_w *w, const char *str);
+//int                 create_standard(t_w *w, char *line);
 void 			    count_of_string(t_w *w, char *file);
 void				process_of_wolf(t_w *w);
 t_ray		        *init_vert(int x, int y, double angle);
@@ -114,6 +122,14 @@ void				player_init(t_w *w);
 void                malloc_stuff(t_w *w);
 void			    initialization_(t_w *w);
 void                init_textures(t_w *w);
-SDL_Surface         *load_surface(char *file);
+SDL_Surface         *load_surface(t_w *w, char *file);
+
+void                draw_column(t_w *w, t_ray *ray, int x);
+void                print_layer(t_w *w, int start, int part, int color);
+
+void                calc_wall_data(t_w *w, t_ray *result, double angle);
+int 			    is_wall(t_w *w, int y, int x);
+
+void                del_array(void **array);
 
 #endif

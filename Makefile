@@ -6,7 +6,7 @@
 #    By: dgorold- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/22 10:09:18 by dgorold-          #+#    #+#              #
-#    Updated: 2019/10/16 18:52:41 by dgorold-         ###   ########.fr        #
+#    Updated: 2019/10/17 18:52:32 by dgorold-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,9 @@ SRC_LIST =	main.c \
             initialization.c \
             read_map.c \
             read_map_helper.c \
-            wolf_process.c
+            raycasting.c \
+            drawing_window.c \
+            ft_for_walls.c
 
 SRC = $(addprefix $(SRC_PATH)/, $(SRC_LIST))
 

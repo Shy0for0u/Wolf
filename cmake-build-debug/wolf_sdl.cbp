@@ -263,6 +263,15 @@
 		<Unit filename="/Users/dgorold-/CLionProjects/Wolf/libft/get_next_line.c">
 			<Option target="wolf_sdl"/>
 		</Unit>
+		<Unit filename="/Users/dgorold-/CLionProjects/Wolf/src/drowing_window.c">
+			<Option target="wolf_sdl"/>
+		</Unit>
+		<Unit filename="/Users/dgorold-/CLionProjects/Wolf/src/free_memory.c">
+			<Option target="wolf_sdl"/>
+		</Unit>
+		<Unit filename="/Users/dgorold-/CLionProjects/Wolf/src/ft_for_walls.c">
+			<Option target="wolf_sdl"/>
+		</Unit>
 		<Unit filename="/Users/dgorold-/CLionProjects/Wolf/src/hooks.c">
 			<Option target="wolf_sdl"/>
 		</Unit>
@@ -275,13 +284,13 @@
 		<Unit filename="/Users/dgorold-/CLionProjects/Wolf/src/main.c">
 			<Option target="wolf_sdl"/>
 		</Unit>
+		<Unit filename="/Users/dgorold-/CLionProjects/Wolf/src/raycasting.c">
+			<Option target="wolf_sdl"/>
+		</Unit>
 		<Unit filename="/Users/dgorold-/CLionProjects/Wolf/src/read_map.c">
 			<Option target="wolf_sdl"/>
 		</Unit>
 		<Unit filename="/Users/dgorold-/CLionProjects/Wolf/src/read_map_helper.c">
-			<Option target="wolf_sdl"/>
-		</Unit>
-		<Unit filename="/Users/dgorold-/CLionProjects/Wolf/src/wolf_process.c">
 			<Option target="wolf_sdl"/>
 		</Unit>
 		<Unit filename="/Users/dgorold-/CLionProjects/Wolf/CMakeLists.txt">
